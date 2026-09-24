@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3Q85222YJN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-3Q85222YJN');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>성경은 어떻게 우리 손에 — 대학생 버전</title>
+<style>
+:root {
+  --primary:#2f4858; --primary-light:#6e94a5; --primary-xlight:#e3edf2; --primary-dark:#1a2e38;
+  --accent:#e76f51; --sky:#4895ef; --sky-light:#cce5ff;
+  --gold:#f4a261; --gold-light:#fde9d4; --purple:#7b2d8b; --purple-light:#e8d5ed;
+  --bg:#f9fafb; --card:#ffffff; --text:#1a1a2e; --muted:#6c757d;
+  --border:#dee2e6; --radius:12px; --shadow:0 2px 12px rgba(0,0,0,0.08);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Noto Sans KR','Apple SD Gothic Neo',sans-serif;background:var(--bg);color:var(--text);}
+a{color:var(--primary);font-weight:600;}
+
+.site-header{background:linear-gradient(135deg,#1a2e38 0%,#2f4858 100%);color:#fff;padding:48px 24px 36px;text-align:center;}
+.site-header h1{font-size:2rem;font-weight:800;margin-bottom:8px;}
+.site-header p{opacity:.85;font-size:.95rem;max-width:560px;margin:0 auto;line-height:1.7;}
+.level-badge{display:inline-block;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.35);border-radius:20px;padding:4px 16px;font-size:.8rem;margin-top:14px;}
+
+nav{background:#fff;border-bottom:2px solid var(--primary-xlight);position:sticky;top:0;z-index:100;overflow-x:auto;scrollbar-width:none;}
+nav::-webkit-scrollbar{display:none;}
+.nav-inner{display:flex;gap:0;width:fit-content;max-width:100%;margin:0 auto;padding:0 12px;overflow-x:auto;scrollbar-width:none;}
+.nav-inner::-webkit-scrollbar{display:none;}
+.nav-inner::after{content:'';flex:0 0 16px;}
+nav a{display:inline-block;padding:11px 9px;font-size:.78rem;font-weight:600;color:var(--muted);text-decoration:none;white-space:nowrap;border-bottom:3px solid transparent;transition:.2s;}
+nav a:hover,nav a.active{color:var(--primary);border-bottom-color:var(--primary);}
+
+main{max-width:900px;margin:0 auto;padding:40px 20px 80px;}
+section{margin-bottom:56px;}
+.section-title{font-size:1.4rem;font-weight:800;color:var(--primary);margin-bottom:6px;}
+.section-subtitle{font-size:.92rem;color:var(--muted);margin-bottom:20px;}
+h3{font-size:1.1rem;font-weight:700;margin:20px 0 10px;}
+h4{font-size:.97rem;font-weight:700;margin:16px 0 8px;}
+p{line-height:1.8;margin-bottom:10px;font-size:.95rem;}
+ul,ol{padding-left:22px;line-height:1.8;font-size:.93rem;}
+li{margin-bottom:4px;}
+
+.card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px 24px;margin-bottom:16px;}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;}
+.accent-card{border-left:4px solid var(--accent);}
+.sky-card{border-left:4px solid var(--sky);}
+.gold-card{border-left:4px solid var(--gold);}
+.primary-card{border-left:4px solid var(--primary);}
+
+.heb{font-size:1.2rem;font-weight:700;color:var(--primary);background:var(--primary-xlight);padding:2px 8px;border-radius:6px;direction:rtl;unicode-bidi:isolate;}
+.grk{font-weight:600;color:var(--primary);}
+
+.blockquote{background:var(--primary-xlight);border-left:4px solid var(--primary);border-radius:0 var(--radius) var(--radius) 0;padding:18px 22px;margin:16px 0;}
+.blockquote p{margin-bottom:6px;}
+.blockquote cite{font-size:.82rem;color:var(--muted);}
+.blockquote.gold{background:var(--gold-light);border-color:var(--gold);}
+.warn-box{background:#fff3cd;border-left:4px solid #ffc107;border-radius:0 8px 8px 0;padding:14px 18px;margin:14px 0;font-size:.9rem;line-height:1.7;}
+.xlink{background:var(--sky-light);border-left:4px solid var(--sky);border-radius:0 8px 8px 0;padding:12px 16px;margin:14px 0;font-size:.88rem;line-height:1.7;}
+
+.tab-bar{display:flex;gap:0;border-bottom:2px solid var(--border);margin-bottom:0;overflow-x:auto;scrollbar-width:none;}
+.tab-bar::-webkit-scrollbar{display:none;}
+.tab-btn{padding:10px 18px;font-size:.86rem;font-weight:600;color:var(--muted);background:none;border:none;border-bottom:3px solid transparent;margin-bottom:-2px;cursor:pointer;transition:.2s;white-space:nowrap;font-family:inherit;}
+.tab-btn.active{color:var(--primary);border-bottom-color:var(--primary);}
+.tab-panel{display:none;background:var(--card);border:1px solid var(--border);border-top:none;border-radius:0 0 var(--radius) var(--radius);padding:22px;}
+.tab-panel.active{display:block;}
+
+.acc-item{border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:10px;}
+.acc-btn{width:100%;text-align:left;padding:15px 18px;background:var(--card);border:none;font-size:.93rem;font-weight:700;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:inherit;gap:10px;}
+.acc-btn:hover{background:#f4f7f9;}
+.acc-body{max-height:0;overflow:hidden;transition:max-height .35s ease, padding .35s ease;padding:0 18px;background:#fafcfd;}
+.acc-body.open{padding:16px 18px;}
+.acc-arrow{font-size:.75rem;color:var(--muted);transition:transform .25s;flex-shrink:0;}
+.case-grid{display:grid;grid-template-columns:110px 1fr;gap:6px 14px;font-size:.9rem;line-height:1.7;}
+.case-grid dt{font-weight:800;color:var(--primary);}
+.case-grid dd{margin:0 0 6px;}
+@media(max-width:560px){.case-grid{grid-template-columns:1fr;}.case-grid dd{margin-bottom:10px;}}
+
+.timeline{position:relative;margin:20px 0;padding-left:26px;border-left:2px solid var(--primary-xlight);}
+.t-item{position:relative;margin-bottom:20px;}
+.t-item::before{content:'';position:absolute;left:-32px;top:4px;width:11px;height:11px;border-radius:50%;background:var(--primary);border:2px solid #fff;box-shadow:0 0 0 2px var(--primary-xlight);}
+.t-year{font-size:.78rem;font-weight:800;color:var(--primary);letter-spacing:.3px;}
+.t-text{font-size:.89rem;line-height:1.65;margin-top:2px;}
+
+.debate{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0;}
+.debate-box{background:var(--card);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);}
+.debate-box.pro{border-top:3px solid var(--primary);}
+.debate-box.con{border-top:3px solid var(--accent);}
+.debate-label{font-size:.75rem;font-weight:700;letter-spacing:.6px;text-transform:uppercase;margin-bottom:8px;}
+.debate-box.pro .debate-label{color:var(--primary);}
+.debate-box.con .debate-label{color:var(--accent);}
+.debate-box p,.debate-box li{font-size:.88rem;}
+
+.spectrum-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin:16px 0;}
+.spec-card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;border-top:4px solid var(--primary-light);}
+.spec-label{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);margin-bottom:4px;}
+.spec-title{font-size:.98rem;font-weight:800;margin-bottom:8px;}
+.spec-body{font-size:.87rem;color:#444;line-height:1.65;}
+
+.scripture{background:var(--gold-light);border-left:4px solid var(--gold);border-radius:0 var(--radius) var(--radius) 0;padding:14px 18px;margin:12px 0;font-size:.92rem;line-height:1.8;}
+.scripture cite{font-size:.8rem;color:var(--muted);display:block;margin-top:4px;}
+
+.tbl-wrap{overflow-x:auto;margin:14px 0;}
+table.tbl{width:100%;border-collapse:collapse;font-size:.86rem;background:var(--card);min-width:520px;}
+table.tbl th{background:var(--primary);color:#fff;padding:9px 10px;text-align:left;font-weight:700;}
+table.tbl td{padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.6;}
+table.tbl tr:nth-child(even) td{background:#f7fafb;}
+
+.num-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:16px 0;}
+.num-card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px;text-align:center;border-top:3px solid var(--primary-light);}
+.num-card .num{font-size:1.35rem;font-weight:800;color:var(--primary);}
+.num-card .num-label{font-size:.8rem;color:var(--muted);margin-top:4px;line-height:1.5;}
+
+.spectrum-bar{margin:18px 0;}
+.spectrum-track{height:10px;border-radius:5px;background:linear-gradient(90deg,var(--primary-dark),var(--primary-light),var(--gold));}
+.spectrum-labels{display:flex;justify-content:space-between;font-size:.78rem;font-weight:700;color:var(--muted);margin-top:6px;}
+.spectrum-items{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:10px;font-size:.82rem;}
+.spectrum-items div{background:var(--card);border-radius:8px;box-shadow:var(--shadow);padding:10px;line-height:1.55;}
+@media(max-width:560px){.spectrum-items{grid-template-columns:1fr 1fr;}}
+
+.gloss-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;}
+.gloss-item{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px;border-top:3px solid var(--primary-light);}
+.gloss-term{font-weight:700;font-size:.95rem;margin-bottom:4px;}
+.gloss-def{font-size:.85rem;color:#444;line-height:1.6;}
+
+.person-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;}
+.person-card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px;display:flex;flex-direction:column;gap:8px;border-top:3px solid var(--primary-light);}
+.person-card.opp{border-top-color:var(--accent);}
+.person-name{font-weight:800;font-size:1rem;}
+.person-role{font-size:.8rem;color:var(--muted);}
+.person-contrib{font-size:.87rem;line-height:1.6;}
+
+.discuss-card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px 24px;margin-bottom:14px;border-left:4px solid var(--purple);}
+.discuss-num{font-size:.78rem;font-weight:700;color:var(--purple);letter-spacing:.5px;text-transform:uppercase;margin-bottom:6px;}
+.discuss-q{font-size:.97rem;font-weight:700;margin-bottom:8px;}
+.discuss-hint{font-size:.85rem;color:var(--muted);line-height:1.6;}
+
+.ref-group{margin-bottom:22px;}
+.ref-group-title{font-size:.78rem;font-weight:700;color:var(--primary);letter-spacing:.5px;text-transform:uppercase;margin-bottom:8px;padding-bottom:4px;border-bottom:1px solid var(--primary-xlight);}
+.ref-item{font-size:.875rem;line-height:1.75;padding:7px 0;border-bottom:1px solid #f0f0f0;display:flex;gap:8px;}
+.ref-item:last-child{border-bottom:none;}
+.ref-num{font-weight:800;color:var(--primary);min-width:22px;display:inline-block;flex-shrink:0;}
+.ref-warning{background:var(--gold-light);border:1px solid var(--gold);border-radius:var(--radius);padding:14px 18px;font-size:.85rem;color:#6b4c1a;margin-top:20px;line-height:1.6;}
+
+.quiz-card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px;margin-bottom:16px;}
+.q-num{font-size:.75rem;font-weight:700;color:var(--primary);text-transform:uppercase;margin-bottom:6px;}
+.q-text{font-size:1rem;font-weight:700;margin-bottom:14px;line-height:1.5;}
+.q-options{display:flex;flex-direction:column;gap:8px;}
+.q-opt{text-align:left;padding:12px 16px;border-radius:8px;border:1.5px solid var(--border);background:#fff;font-size:.9rem;cursor:pointer;transition:.18s;font-family:inherit;}
+.q-opt:hover:not(:disabled){border-color:var(--primary);background:var(--primary-xlight);}
+.q-opt.correct{border-color:#2d6a4f;background:#d8f3dc;color:#2d6a4f;font-weight:700;}
+.q-opt.wrong{border-color:#e63946;background:#ffe0e3;color:#c1121f;}
+.q-feedback{margin-top:12px;padding:10px 14px;border-radius:8px;background:var(--primary-xlight);font-size:.88rem;border-left:3px solid var(--primary);}
+.score-box{background:var(--primary);color:#fff;border-radius:var(--radius);padding:28px;text-align:center;margin-top:24px;display:none;}
+.score-num{font-size:2.8rem;font-weight:800;margin-bottom:4px;}
+
+footer{background:var(--primary-dark);color:rgba(255,255,255,.75);text-align:center;padding:20px;font-size:.82rem;}
+footer a{color:rgba(255,255,255,.9);text-decoration:none;font-weight:400;}
+
+@media(max-width:640px){.debate{grid-template-columns:1fr;}}
+@media(max-width:480px){
+  .site-header{padding:28px 16px 24px;} .site-header h1{font-size:1.5rem;} .site-header p{font-size:.88rem;}
+  .level-badge{font-size:.75rem;} main{padding:20px 14px 60px;} section{margin-bottom:40px;}
+  .section-title{font-size:1.2rem;} .card{padding:14px 16px;} .blockquote{padding:14px 16px;}
+  .tab-btn{font-size:.78rem;padding:8px 12px;} .tab-panel{padding:16px;} .acc-btn{padding:12px 14px;font-size:.88rem;}
+  .acc-body.open{padding:12px 14px;} .quiz-card{padding:16px;} .q-opt{padding:9px 12px;font-size:.85rem;}
+  .discuss-card{padding:16px;} .person-card{padding:14px;} .gloss-item{padding:12px;} .heb{font-size:1.05rem;}
+  .timeline{padding-left:20px;} .t-item::before{left:-26px;}
+}
+</style>
+</head>
+<body>
+
+<div style="background:#1a2e38;padding:10px 20px;display:flex;align-items:center;gap:10px;">
+  <a href="https://isaac-math.github.io/Faith_Reason/" style="color:#fff;text-decoration:none;font-size:.83rem;font-weight:600;display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.2);border-radius:16px;padding:4px 12px;">← 전체 시리즈</a>
+  <span style="color:rgba(255,255,255,.35);font-size:.8rem;">|</span>
+  <a href="index.html" style="color:#fff;text-decoration:none;font-size:.83rem;font-weight:600;
+     display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,.15);
+     border:1px solid rgba(255,255,255,.3);border-radius:16px;padding:4px 12px;">🏠 홈으로</a>
+  <span style="color:rgba(255,255,255,.35);font-size:.8rem;">|</span>
+  <span style="color:rgba(255,255,255,.7);font-size:.82rem;">성경은 어떻게 우리 손에 — 대학생 버전</span>
+</div>
+
+<div class="site-header">
+  <h1>📜 성경은 어떻게 우리 손에</h1>
+  <p>사본, 정경, 번역 — 이천 년의 전달 사슬. "원본이 없는데 어떻게 믿나?"라는 도전에 사본학·정경사·번역사가 답한다.</p>
+  <span class="level-badge">대학생 버전</span>
+</div>
+
+<nav><div class="nav-inner">
+  <a href="#s0" class="active" onclick="setActive(this)">소개</a>
+  <a href="#s1" onclick="setActive(this)">마소라</a>
+  <a href="#s2" onclick="setActive(this)">사해사본</a>
+  <a href="#s3" onclick="setActive(this)">신약 사본</a>
+  <a href="#s4" onclick="setActive(this)">본문비평</a>
+  <a href="#s5" onclick="setActive(this)">어만 논쟁</a>
+  <a href="#s6" onclick="setActive(this)">구약 정경</a>
+  <a href="#s7" onclick="setActive(this)">신약 정경</a>
+  <a href="#s8" onclick="setActive(this)">번역사</a>
+  <a href="#s9" onclick="setActive(this)">한국어 성경</a>
+  <a href="#s10" onclick="setActive(this)">번역 이론</a>
+  <a href="#s11" onclick="setActive(this)">디지털 사본학</a>
+  <a href="#s12" onclick="setActive(this)">학자</a>
+  <a href="#s13" onclick="setActive(this)">용어</a>
+  <a href="#s14" onclick="setActive(this)">토론 논제</a>
+  <a href="#s_ref" onclick="setActive(this)">레퍼런스</a>
+  <a href="#s_quiz" onclick="setActive(this)">퀴즈</a>
+</div></nav>
+
+<main>
+
+<!-- S0 -->
+<section id="s0">
+<div class="section-title">S0 · 도입 — 어만의 도전</div>
+<p class="section-subtitle">원본도, 원본의 사본도 없다는 도전(어만의 논지 요지)</p>
+
+<p>2005년, 노스캐롤라이나 대학교(채플힐)의 신약학자 바트 어만(Bart D. Ehrman)은 대중서 『Misquoting Jesus』(한국어판 『성경 왜곡의 역사』)를 펴냈고, 이 책은 종교 분야로는 이례적으로 베스트셀러가 되었다. 책의 핵심 도발은 간명하다 — <strong>우리에게는 신약 저자들이 쓴 원본이 없을 뿐 아니라, 원본의 첫 사본도, 그 사본의 사본도 없으며, 가진 것은 수 세기 뒤의 '사본의 사본의 사본'들뿐이고, 그 사본들은 서로 수십만 군데에서 다르다</strong>(요지).</p>
+
+<p>어만의 이력이 이 도전에 무게를 더한다. 그는 복음주의 배경(무디 성경학교, 휘튼 칼리지)에서 출발해 프린스턴 신학교에서 20세기 본문비평의 거장 브루스 메츠거의 지도로 박사 학위를 받았다. 본문을 가장 깊이 연구한 사람이 그 연구를 계기로 성경 무오에 대한 복음주의적 확신을 내려놓았다고 고백한 것이다(그가 훗날 신앙 자체를 떠난 결정적 이유로는 본문 문제가 아니라 고난의 문제를 든다 — 『God's Problem』, 2008. 고난의 문제는 <a href="https://isaac-math.github.io/Problem-of-Evil/">「고난과 악」(PE) 시리즈</a>가 다룬다). 이 시리즈는 그의 도전을 회피하지 않고 <strong>가장 강한 형태로</strong> 받아들인 뒤 증거를 따라 응답한다.</p>
+
+<div class="card-grid">
+  <div class="card primary-card"><h4 style="margin-top:0;">① 사본 — 본문은 얼마나 잘 전달되었나</h4><p style="margin:0;font-size:.9rem;">마소라, 사해사본, 신약 사본의 바다, 본문비평의 방법, 어만 논쟁 (S1–S5)</p></div>
+  <div class="card gold-card"><h4 style="margin-top:0;">② 정경 — 왜 하필 이 책들인가</h4><p style="margin:0;font-size:.9rem;">구약 정경과 얌니아 신화, 신약 정경의 '인정' 과정 (S6–S7)</p></div>
+  <div class="card sky-card"><h4 style="margin-top:0;">③ 번역 — 번역은 믿을 만한가</h4><p style="margin:0;font-size:.9rem;">70인역에서 KJV까지, 한국어 성경 전래사, 번역 이론, 디지털 사본학 (S8–S11)</p></div>
+</div>
+
+<div class="xlink"><strong>🔗 BA 시리즈와의 분업</strong>: <a href="https://isaac-math.github.io/Biblical-Authority/BA_high.html#s6">「성경의 권위」(BA) 대학생 버전</a>이 영감·무오성, 즉 '원본의 지위'를 다룬다면, 이 시리즈는 <strong>원본에서 오늘 나의 손까지 이어지는 사슬</strong>을 다룬다. BA의 정경론 섹션(기준 3가지, 367·397년)은 개관이고, 그 심화판이 이 시리즈의 S6–S7이다.</div>
+
+<div class="warn-box"><strong>이 시리즈의 프레임</strong>: 신앙의 토대는 '한 글자도 틀림없는 기적적 전달'이 아니라 <strong>'충분히 신뢰할 만한 전달 + 하나님의 섭리'</strong>다. 따라서 이문(異文)의 실상을 숨기지도("전부 사소하다"), 부풀리지도("수십만 개의 오류!") 않고, 범주화된 정확한 그림을 제시한다.</div>
+</section>
+
+<!-- S1 -->
+<section id="s1">
+<div class="section-title">S1 · 구약 본문의 전달 — 마소라의 세계</div>
+<p class="section-subtitle">글자를 세던 사람들</p>
+
+<h3>소페림에서 마소라 학자들까지</h3>
+<p>제2성전 시대 이후 히브리어 성경의 필사는 '서기관'(소페림, <span class="heb">סוֹפְרִים</span>)의 전문 영역이었다. 그 전통을 이어 6–10세기경 티베리아스 등지에서 활동한 <strong>마소라 학자들</strong>(Masoretes)은 자음만 쓰던 히브리어 본문에 세 가지 장치를 더했다.</p>
+<ul>
+  <li><strong>모음 부호(니쿠드)</strong>: 자음 본문은 그대로 두고 그 위아래에 점과 선을 찍어 읽는 법을 고정했다.</li>
+  <li><strong>악센트 부호</strong>: 낭독의 억양과 구문 단락을 표시했다.</li>
+  <li><strong>마소라(난외주)</strong>: 특정 단어의 출현 횟수, 책의 절 수, 심지어 토라의 가운데 글자(레 11:42)까지 세어 여백에 기록했다 — 필사 오류를 잡아내는 일종의 '체크섬'이었다.</li>
+</ul>
+
+<h3>케레와 케티브 — 쓰인 것과 읽는 것</h3>
+<p>마소라 학자들이 자음 본문을 얼마나 존중했는지 보여주는 장치가 <span class="heb">כְּתִיב</span>(케티브, '쓰인 것')와 <span class="heb">קְרֵי</span>(케레, '읽을 것')다. 전승된 자음 본문이 문법적으로 어색하거나 낭독 전통과 다를 때, 그들은 본문을 <em>고치지 않고</em> 그대로 둔 채 여백에 "이렇게 읽으라"를 적었다. 가장 유명한 예가 하나님의 이름 <span class="heb">יהוה</span>다. 이 네 글자에는 '아도나이'(주)의 모음을 붙여 '아도나이'로 읽게 했는데(영구적 케레), 훗날 이 조합을 글자 그대로 읽은 결과가 '여호와(Jehovah)'라는 형태다.</p>
+
+<h3>두 개의 표준 사본</h3>
+<div class="card-grid">
+  <div class="card primary-card"><h4 style="margin-top:0;">알레포 사본 (930년경)</h4><p style="margin:0;font-size:.9rem;">벤 아셀 가문의 아론 벤 아셀이 모음·악센트를 단 것으로 알려진 최고 권위의 사본. 1947년 알레포 폭동 이후 행방을 거쳐 1958년 예루살렘에 도착했을 때 토라 대부분을 포함해 약 40%가 없었다. 폭동 때 불탔다는 것이 오랜 공식 설명이지만, 소실 시점과 경위는 지금도 논쟁 중이다.</p></div>
+  <div class="card primary-card"><h4 style="margin-top:0;">레닌그라드 사본 (1008년)</h4><p style="margin:0;font-size:.9rem;">현존하는 <strong>가장 오래된 히브리어 성경 전권 사본</strong>. 벤 아셀 전통을 따른다. 현대 학술 표준판인 BHS와 BHQ의 저본(底本)이다. 러시아 국립도서관 소장.</p></div>
+</div>
+
+<h3>70인역(LXX)의 이중 역할</h3>
+<p>기원전 3세기 알렉산드리아에서 토라부터 시작해 이후 수 세기에 걸쳐 완성된 그리스어 구약 번역이 70인역이다. 70인역은 (1) 마소라 본문보다 천 년 이상 앞선 <strong>가장 오래된 번역 증인</strong>이자, (2) 신약 저자들이 가장 자주 인용한 <strong>'초대 교회의 성경'</strong>이다.</p>
+<div class="warn-box"><strong>정직하게 다룰 문제</strong>: 몇몇 책에서 70인역은 마소라 본문과 상당히 다르다. 70인역 <strong>예레미야</strong>는 마소라 본문보다 약 7분의 1이 짧고 신탁의 배열 순서도 다르다. <strong>사무엘</strong>서에서는 골리앗의 키가 마소라 본문에서 '여섯 규빗 한 뼘', 70인역에서 '네 규빗 한 뼘'이다. 오랫동안 이런 차이는 "번역자의 자유로운 처리"로 설명되었지만, 사해사본(S2)에서 70인역과 일치하는 <em>히브리어</em> 사본이 발견되면서 70인역 번역자들이 마소라 본문과 다른 히브리어 본문을 번역했을 가능성이 커졌다.</div>
+</section>
+
+<!-- S2 -->
+<section id="s2">
+<div class="section-title">S2 · 사해사본 — 1000년을 건너뛴 검증</div>
+<p class="section-subtitle">쿰란이 보여준 두 가지 진실: 정확성과 다양성</p>
+
+<div class="num-cards">
+  <div class="num-card"><div class="num">1946–56</div><div class="num-label">1번 동굴 발견부터<br>11번 동굴까지</div></div>
+  <div class="num-card"><div class="num">11개</div><div class="num-label">두루마리가 나온<br>쿰란 동굴</div></div>
+  <div class="num-card"><div class="num">25,000+</div><div class="num-label">조각 수<br>(IAA 디지털 도서관 기준)</div></div>
+  <div class="num-card"><div class="num">약 950–1,000</div><div class="num-label">복원된 개별 필사본 수<br>(성경 사본은 그 일부)</div></div>
+</div>
+
+<p>1946–47년 겨울 베두인 목동들의 발견으로 시작된 사해사본은 그 전까지 10세기경에 머물던 히브리어 성경 사본의 연대를 단숨에 기원전 3–1세기로 끌어올렸다. 에스더를 제외한 구약 모든 책의 조각이 확인되었다.</p>
+
+<h3>대이사야 두루마리(1QIsa<sup>a</sup>) — 전달 정확성의 실증</h3>
+<p>1번 동굴에서 나온 1QIsa<sup>a</sup>는 이사야 66장 전체를 담은 길이 약 7.3m의 두루마리로, 기원전 2세기의 것으로 추정된다. 1,000년 이상 뒤의 마소라 사본과 비교하면 차이는 대부분 철자(모음 문자 사용 등)와 사소한 어형에 그치고, 본문의 내용과 흐름은 놀라울 만큼 일치한다. 같은 동굴의 1QIsa<sup>b</sup>는 마소라 본문과 더욱 가깝다.</p>
+
+<h3>그러나 — 쿰란의 텍스트 다원성</h3>
+<p>사해사본을 "마소라 본문이 완벽하게 전달되었다는 증명"으로만 소개하는 것은 단순화다. 사해사본 공식 편집장을 지낸 에마누엘 토브(Emanuel Tov)는 쿰란의 성경 사본들을 다섯 그룹(쿰란 필사 관행 / 원마소라 / 사마리아 오경 선행 / 70인역 저본 근사 / 비정렬)으로 분류한다. 아래는 그중 쿰란 필사 관행과 비정렬 그룹을 하나로 묶어 넷으로 정리한 것이다.</p>
+<div class="spectrum-grid">
+  <div class="spec-card"><div class="spec-label">그룹 1</div><div class="spec-title">원(原)마소라 계열</div><div class="spec-body">훗날 마소라 본문으로 이어지는 자음 본문. 쿰란 성경 사본의 다수를 차지한다.</div></div>
+  <div class="spec-card"><div class="spec-label">그룹 2</div><div class="spec-title">70인역 원본 계열</div><div class="spec-body">70인역이 번역한 히브리어 본문과 가까운 사본(예: 4QJer<sup>b,d</sup> — 짧은 예레미야, 4QSam<sup>a</sup>).</div></div>
+  <div class="spec-card"><div class="spec-label">그룹 3</div><div class="spec-title">사마리아 오경 선행 계열</div><div class="spec-body">사마리아 오경과 특징(조화를 위한 확장 등)을 공유하는 오경 사본.</div></div>
+  <div class="spec-card"><div class="spec-label">그룹 4</div><div class="spec-title">비정렬·쿰란 필사 관행</div><div class="spec-body">어느 계열에도 딱 맞지 않는 사본과, 쿰란 공동체 특유의 철자 관행으로 필사된 사본.</div></div>
+</div>
+<p>즉 기원전 1세기 무렵의 히브리어 성경은 <strong>단일한 고정 본문이 아니라 여러 본문 전통이 공존</strong>하던 상태였고, 이후 원마소라 계열이 유대교의 표준으로 자리 잡았다. 이것은 신앙에 위협인가? 오히려 이 다양성 덕분에 우리는 본문의 역사를 추적하고 더 이른 형태를 판별할 수 있게 되었다. 현대 번역(개역개정 포함)이 때로 70인역이나 사해사본 독법을 난외주로 소개하는 이유다.</p>
+
+<h3>2025년 'Enoch' 연구 — 사본학과 AI의 만남</h3>
+<div class="card sky-card">
+<p>2025년 6월 흐로닝언대학교의 믈라덴 포포비치(Mladen Popović) 연구팀은 <em>PLOS ONE</em>에 방사성탄소 연대측정과 AI 필적 분석을 결합한 연대 추정 모델 'Enoch'를 발표했다. 탄소 연대가 확보된 사본 24개로 필적과 연대의 관계를 학습시킨 뒤, 탄소 연대가 없는 사본 135개의 연대를 추정한 것이다.</p>
+<ul>
+  <li>하스몬·헤롯 시대 서체의 일부 사본이 기존 필적학 추정보다 <strong>50년에서 한 세기가량 이르게</strong> 나왔다.</li>
+  <li>다니엘서 사본 4Q114의 추정 범위(기원전 230–160년)는 다니엘서의 통상적 저작 추정 시기와 <strong>겹치고</strong>, 전도서 사본 4Q109는 기원전 3세기로 추정되었다. 연구진은 이를 '추정 저작 시기와 같은 시대의 성경 사본'일 가능성으로 제시했다.</li>
+</ul>
+</div>
+<div class="warn-box"><strong>서술 수위 주의 — 진행 중인 연구</strong>: Enoch는 <em>AI 보조 추정</em>이지 확정 연대가 아니다. 연구진 스스로 135개 추정치 중 약 79%만 전문가 판정에서 현실적이라고 평가받았고 나머지 21%는 너무 이르거나 너무 늦은 것으로 판정되었다고 밝혔으며, 모델은 기원전 300년–기원후 200년 범위 밖을 추정할 수 없다. 반응도 엇갈린다 — 호의적 평가가 있는 한편, 비문학자 크리스토퍼 롤스턴은 "매우 흥미롭고 아마도 중요하지만, 획기적이지는 않다"(very interesting, and presumably important, but not earth-shattering)고 평가하며 4Q114 범위의 상한이 다니엘서가 서술하는 기원전 167년 사건보다 앞선다는 점을 지적했다. 이 시리즈는 이를 <strong>'진행 중인 논쟁'</strong>으로만 소개한다.</div>
+<div class="xlink">🔗 AI가 인문학 연구 도구로 쓰이는 흐름은 <a href="https://isaac-math.github.io/AI-Faith/AI_high.html#s1">「인공지능과 신앙」(AI) 대학생 버전의 AI 기술사</a>와 함께 읽으면 좋다.</div>
+</section>
+
+<!-- S3 -->
+<section id="s3">
+<div class="section-title">S3 · 신약 사본의 바다</div>
+<p class="section-subtitle">풍부함은 축복이자 과제다</p>
+
+<h3>규모 — 정확한 숫자로</h3>
+<p>신약 그리스어 사본의 공식 목록(Kurzgefasste Liste)은 독일 뮌스터의 신약본문연구소(INTF)가 관리한다. 목록 번호는 파피루스 141번, 대문자 사본 326번, 소문자 사본 3,019번, 성구집 2,555번까지 매겨져 합계 6,000을 넘지만, 한 사본이 여러 번호로 나뉘었거나 등록이 취소된 경우를 정리하면 INTF가 밝힌 실제 현존 사본은 <strong>약 5,700개</strong>다(2023년 기준). 흔히 인용되는 "5,800개 이상"은 옛 집계다.</p>
+<div class="num-cards">
+  <div class="num-card"><div class="num">파피루스</div><div class="num-label">2–8세기, 가장 이른 증인들<br>(P52, P66, P75 등)</div></div>
+  <div class="num-card"><div class="num">대문자 사본</div><div class="num-label">3/4–10세기, 양피지 대문자 필사<br>(א, B, A, D 등)</div></div>
+  <div class="num-card"><div class="num">소문자 사본</div><div class="num-label">9세기 이후, 필기체 소문자<br>대부분 비잔틴 계열</div></div>
+  <div class="num-card"><div class="num">성구집</div><div class="num-label">예배 낭독용으로<br>본문을 발췌·배열</div></div>
+</div>
+<p>여기에 라틴어·시리아어·콥트어 등 <strong>고대 역본</strong>과, 교부들의 설교·주석 속 <strong>인용</strong>이 더해져 3중의 증거망을 이룬다.</p>
+
+<h3>주요 증인 카드</h3>
+<div class="card-grid">
+  <div class="card primary-card"><h4 style="margin-top:0;">P52 (요한복음 단편)</h4><p style="margin:0;font-size:.88rem;">신용카드 크기의 파피루스 조각에 요 18:31–33, 37–38. 1935년 C. H. 로버츠가 필적으로 <strong>125년경</strong>으로 추정해 '가장 오래된 신약 조각'으로 유명해졌다. 다만 필적 연대는 그만큼 정밀하지 않다는 비판(농브리 2005, 2020)이 있어, 2세기 후반–3세기까지 범위를 여는 학자들도 있다. 맨체스터 존 라일랜즈 도서관 소장.</p></div>
+  <div class="card primary-card"><h4 style="margin-top:0;">P66 · P75 (보드머 파피루스)</h4><p style="margin:0;font-size:.88rem;">요한복음(P66)과 누가·요한복음(P75)의 상당 부분을 담은 2–3세기 코덱스. 특히 P75는 4세기 바티칸사본(B)과 본문이 매우 가까워, B 계열 본문이 4세기의 편집물이 아니라 훨씬 이른 본문을 보존했음을 보여주었다.</p></div>
+  <div class="card primary-card"><h4 style="margin-top:0;">시내산사본 (א, 4세기)</h4><p style="margin:0;font-size:.88rem;">신약 전체가 온전히 남은 가장 오래된 사본. 티셴도르프가 1844년 시내산 성 카타리나 수도원에서 구약 43장(1846년 <em>Codex Friderico-Augustanus</em>로 출간)을, 1859년 러시아 황제의 후원으로 나머지를 확보했다. '불쏘시개 바구니' 일화는 티셴도르프의 회고이며 수도원은 이를 부인한다.</p></div>
+  <div class="card primary-card"><h4 style="margin-top:0;">바티칸사본 (B, 4세기)</h4><p style="margin:0;font-size:.88rem;">15세기부터 바티칸 도서관 목록에 등장하는 최고(最古)급 대문자 사본. 알렉산드리아 계열의 대표 증인으로, 현대 비평본 본문에 가장 큰 영향을 준 사본 중 하나다.</p></div>
+</div>
+
+<h3>본문 계열과 '다수 사본' 논쟁</h3>
+<p>사본들은 특징을 공유하는 계열로 묶인다: 이르고 간결한 <strong>알렉산드리아</strong> 계열(P75, א, B), 후대에 표준화되어 사본 수로는 압도적인 <strong>비잔틴</strong> 계열(대부분의 소문자 사본), 의역과 첨가가 많은 <strong>서방</strong> 계열(D). 현대 비평본은 대체로 이른 증인들에 무게를 두지만, 소수의 학자들은 비잔틴 다수 사본이 원문을 가장 잘 보존한다고 본다('다수 본문' 입장). 한편 17세기 KJV의 저본(Textus Receptus)만이 참된 본문이라는 <strong>KJV 온리</strong> 주장은 학문적 논쟁이라기보다 신학적 전제에서 출발한 입장으로, TR 자체가 16세기에 소수 후대 사본으로 급히 편집되었다는 역사(S4 콤마 요한네움)와 충돌한다.</p>
+
+<h3>'풍부함의 역설' — 이문 숫자의 해부</h3>
+<p>사본이 많을수록 이문도 많다. 피터 거리(Peter Gurry)는 2016년 <em>New Testament Studies</em> 논문에서 철자 차이를 제외하고도 신약 그리스어 사본 전체의 이문을 <strong>약 50만 개</strong>로 추정했다(흔히 인용되는 "40만"은 더 오래된 대략치). 신약의 단어 수(약 13만 8천)보다 훨씬 많은 숫자다. 그러나 이 숫자는 필경사들이 유난히 부주의했다는 뜻이 아니라, <strong>그만큼 많이, 오래 베껴졌다</strong>는 뜻이다.</p>
+<div class="tbl-wrap"><table class="tbl">
+<tr><th>범주 (월리스의 분류)</th><th>예</th><th>비중</th></tr>
+<tr><td>① 철자·무의미한 차이</td><td>ν의 첨가 여부(움직이는 뉘), 철자 변형, 명백한 필사 실수</td><td rowspan="2">압도적 다수</td></tr>
+<tr><td>② 번역에 영향 없는 차이</td><td>어순(그리스어는 어순이 자유롭다), 관사 유무, 동의어 교체</td></tr>
+<tr><td>③ 의미는 있으나 원문 가능성이 희박</td><td>후대의 단일 사본에만 있는 독법</td><td>소수</td></tr>
+<tr><td>④ 의미 있고 원문 가능성도 있는 이문</td><td>막 1:41 '불쌍히 여기사' vs '노하사', 롬 5:1 '누리자' vs '누린다'</td><td>대니얼 월리스의 추정: 전체의 1% 미만</td></tr>
+</table></div>
+<p style="font-size:.88rem;color:var(--muted);">※ 비율은 월리스(복음주의 본문비평가)의 추정이다. 어만도 대중서에서 이문의 대부분이 사소하다는 점은 인정하지만, ④범주의 신학적 무게를 훨씬 크게 평가한다(S5).</p>
+<div class="xlink">🔗 <a href="https://isaac-math.github.io/Jesus-History/JH_high.html#s11">「예수와 역사」(JH) 대학생 버전 S11</a>의 반론 ③ "사본이 변개되어 원문을 알 수 없다"는 이 섹션의 요약판이다.</div>
+</section>
+
+<!-- S4 -->
+<section id="s4">
+<div class="section-title">S4 · 본문비평의 방법 — 실습</div>
+<p class="section-subtitle">탐정이 되어 판정해 보자</p>
+
+<div class="debate">
+  <div class="debate-box pro"><div class="debate-label">외적 증거 — 누가 증언하는가</div>
+    <ul><li><strong>연대</strong>: 이른 사본의 독법이 대체로 유리하다(절대 규칙은 아님).</li><li><strong>계열</strong>: 한 계열 안의 백 개 사본은 사실상 하나의 증인이다.</li><li><strong>지리적 분포</strong>: 서로 독립된 여러 지역에서 지지되는 독법이 유리하다.</li></ul></div>
+  <div class="debate-box con"><div class="debate-label">내적 증거 — 무엇이 더 그럴듯한가</div>
+    <ul><li><strong>더 어려운 독법이 우선</strong>(<em>lectio difficilior potior</em>): 필경사는 어려운 표현을 쉽게 고치지, 쉬운 표현을 어렵게 만들지 않는다.</li><li><strong>더 짧은 독법이 우선</strong>(<em>lectio brevior</em>): 필경사는 덧붙이는 경향이 있다(단, 우연한 빠뜨림은 예외).</li><li><strong>저자의 문체·어휘</strong>와 <strong>필경사의 습관</strong>(평행 본문 조화 등)</li></ul></div>
+</div>
+<p>핵심 원칙은 하나로 요약된다: <strong>다른 모든 독법의 발생을 가장 잘 설명하는 독법이 원문일 가능성이 가장 높다.</strong></p>
+
+<h3>유명 사례 3종 심층 분석</h3>
+
+<div class="acc-item">
+  <button class="acc-btn" onclick="toggleAcc(this)">① 막 16:9–20 — 마가복음의 긴 결말 <span class="acc-arrow">▼</span></button>
+  <div class="acc-body"><dl class="case-grid">
+    <dt>증거</dt><dd>가장 이른 두 대문자 사본 시내산사본(א)과 바티칸사본(B)은 16:8("무서워함이라")에서 끝난다. 4세기의 유세비우스와 히에로니무스는 가장 정확한 사본들에 이 단락이 없다고 증언했다. 일부 사본은 다른 '짧은 결말'을 갖고, 어떤 사본은 두 결말을 모두 싣는다. 반면 후대 사본 절대다수는 9–20절을 포함하며, 2세기 말 이레네우스가 16:19를 인용한 것으로 보아 긴 결말은 2세기에 이미 유통되었다.</dd>
+    <dt>판정</dt><dd>대다수 학자는 어휘·문체가 마가의 나머지 부분과 다르고 16:8에서 이야기가 급하게 이어 붙여진 흔적이 있다는 점 등을 들어, 이 단락을 마가 원문이 아닌 초기의 첨가로 본다. 소수는 여전히 진정성을 옹호한다. 마가가 16:8에서 의도적으로 끝냈는지, 원래 결말이 소실되었는지는 별개의 미해결 논쟁이다.</dd>
+    <dt>번역 처리</dt><dd>현대 번역 다수가 본문에 두되 괄호·난외주·소제목으로 사본 상황을 알린다.</dd>
+    <dt>교리적 영향</dt><dd>부활·승천·선교 명령은 다른 복음서와 사도행전에 모두 있다. 이 단락에만 있는 내용(뱀을 집으며 독을 마셔도 해를 받지 않음, 16:18)을 문자적 실천의 근거로 삼는 일부 운동에 대해서만 실질적 의미가 있다.</dd>
+  </dl></div>
+</div>
+
+<div class="acc-item">
+  <button class="acc-btn" onclick="toggleAcc(this)">② 요 7:53–8:11 — 간음하다 잡힌 여인 <span class="acc-arrow">▼</span></button>
+  <div class="acc-body"><dl class="case-grid">
+    <dt>증거</dt><dd>P66, P75, א, B 등 이른 사본들에 없다. 이 단락이 처음 등장하는 그리스어 사본은 5세기의 베자사본(D)이다. 후대 사본에서는 요 7:36 뒤, 요한복음 끝, 누가복음 21:38 뒤 등 <strong>여러 위치를 떠돈다</strong>. 동시에 3세기 문헌이 이 이야기를 알고 있어, 전승 자체는 오래되었음을 시사한다.</dd>
+    <dt>판정</dt><dd>요한복음의 원래 일부는 아니지만, 초대 교회에 오래 전해진 진정한 예수 전승일 가능성이 있다는 것이 많은 학자의 판단이다('떠도는 전승').</dd>
+    <dt>번역 처리</dt><dd>대부분의 현대 번역이 괄호나 주를 달아 본문에 유지한다.</dd>
+    <dt>교리적 영향</dt><dd>죄 사함과 은혜의 가르침은 복음서 전체에 있다. 이 단락에만 의존하는 교리는 없다. 다만 "이 본문으로 설교해도 되는가"라는 목회적 질문이 남는다(토론 논제 3).</dd>
+  </dl></div>
+</div>
+
+<div class="acc-item">
+  <button class="acc-btn" onclick="toggleAcc(this)">③ 요일 5:7–8 — 콤마 요한네움과 에라스무스 <span class="acc-arrow">▼</span></button>
+  <div class="acc-body">
+  <p>KJV는 요일 5:7–8을 이렇게 옮긴다: "For there are three that bear record in heaven, the Father, the Word, and the Holy Ghost: and these three are one. And there are three that bear witness in earth, the spirit, and the water, and the blood…" 밑줄 칠 만한 앞부분(하늘의 세 증인)이 '요한의 삽입구'(Comma Johanneum)다. 개역개정은 이 부분이 없는 본문을 따른다: "증언하는 이가 셋이니 성령과 물과 피라 또한 이 셋은 합하여 하나이니라"(요일 5:7–8).</p>
+  <dl class="case-grid">
+    <dt>증거</dt><dd>4세기 이후 라틴어 전통에서 먼저 나타나며, 아마 난외의 삼위일체적 해설이 본문으로 흘러들어간 것으로 보인다. 그리스어 사본에서는 극소수의 매우 늦은 사본(대부분 14세기 이후, 일부는 난외)에만 있다. 삼위일체 논쟁이 치열했던 4세기 그리스 교부들도 이 구절을 인용하지 않았다.</dd>
+    <dt>에라스무스와 TR</dt><dd>에라스무스는 첫 인쇄 그리스어 신약(1516)과 2판(1519)에서 이 구절을 뺐다가 비판을 받았고, 이 구절이 든 그리스어 사본(16세기 초에 제작된 몽포르티아누스 사본)이 제시되자 3판(1522)에 넣었다. ("한 사본만 나오면 넣겠다"고 약속했다는 유명한 일화는 과장된 전승이라는 연구가 있다.) 이 판본 계통이 훗날 '공인 본문'(Textus Receptus)이 되었고 KJV의 저본이 되었다.</dd>
+    <dt>판정</dt><dd>원문이 아니라는 데 학계 전반이 일치한다. 가톨릭 비평본과 대부분의 현대 번역도 본문에서 뺀다.</dd>
+    <dt>교리적 영향</dt><dd>삼위일체 교리는 이 구절에 의존하지 않는다(마 28:19, 고후 13:13 등). 오히려 이 사례는 교리적 의도가 본문에 들어간 경우를 본문비평이 걸러낸 예다.</dd>
+  </dl></div>
+</div>
+
+<h3>보너스 사례 — 벧후 3:10, 본문비평이 신학을 정교화하다</h3>
+<p>개역개정이 '드러나리로다'로 옮긴 벧후 3:10의 마지막 동사와 KJV의 "burned up"은 서로 다른 그리스어 독법(<span class="grk">εὑρεθήσεται</span>(heurethēsetai) '드러나리라' vs <span class="grk">κατακαήσεται</span>(katakaēsetai) '타버리리라')을 반영한다. 이른 사본(א, B)은 '드러나리라'를 지지하며, 이 독법은 "어차피 다 불탈 세상"이라는 종말론적 무관심을 교정하는 근거가 되었다.</p>
+<div class="xlink">🔗 이 사례의 3개 독법 비교표와 생태신학적 함의는 <a href="https://isaac-math.github.io/Eco-Theology/ECO_high.html#s5">「기독교 생태신학」(ECO) 대학생 버전 S5</a>에서 자세히 다룬다.</div>
+
+<h3>결론 명제 검증 — "정통 교리 중 이문에 의존하는 것은 없다"?</h3>
+<p>이 명제는 본문비평의 신학적 결론으로 자주 인용된다. 메츠거는 평생 이 입장을 견지했고, 흥미롭게도 어만 자신도 『Misquoting Jesus』 보급판 부록의 문답에서, 자기 책의 논지가 "본질적 기독교 신앙은 신약 사본 전승의 이문에 영향받지 않는다"는 스승 메츠거의 입장과 실제로 충돌하지 않는다는 취지로 답했다. 다만 두 사람의 차이는 '영향'의 정의에 있다 — 어만은 개별 본문의 해석(예: 예수의 감정, 대속의 표현)이 달라지는 것 자체를 중요한 변화로 보고, 메츠거와 월리스는 교리의 <em>존립</em> 여부를 기준으로 본다.</p>
+</section>
+
+<!-- S5 -->
+<section id="s5">
+<div class="section-title">S5 · 어만 논쟁 — 공정한 대질</div>
+<p class="section-subtitle">최강의 반론을 먼저, 그다음 응답</p>
+
+<div class="debate">
+  <div class="debate-box con"><div class="debate-label">어만의 논지 — 최강 형태로</div>
+  <ul>
+    <li><strong>초기 필사의 비통제성</strong>: 2–3세기 필사는 전문 필경사가 아닌 교회 구성원들이 맡은 경우가 많았고, 이 시기 사본이 드물기 때문에 가장 중요한 초기 변화를 직접 관찰할 수 없다.</li>
+    <li><strong>'정통적 부패'</strong>: 학술서 『The Orthodox Corruption of Scripture』(1993)에서 그는 정통 신앙의 필경사들이 입양론·가현설 등 이단 논쟁 속에서 본문을 <em>정통 쪽으로</em> 의도적으로 고친 사례들을 분석했다.</li>
+    <li><strong>의미 있는 이문</strong>: 막 1:41(예수가 '노하셨는가, 불쌍히 여기셨는가'), 히 2:9('하나님의 은혜로' vs '하나님 없이'), 눅 22:43–44(피땀 흘리는 기도 단락) 등은 예수상과 대속 이해에 실제로 영향을 준다.</li>
+  </ul></div>
+  <div class="debate-box pro"><div class="debate-label">응답</div>
+  <ul>
+    <li><strong>초기 파피루스의 증거</strong>: P75와 B의 근접성처럼, 2–3세기 증인들은 대체로 후대 본문과 연속성을 보여준다. '관찰할 수 없는 초기'를 가정하는 것은 증거의 부재에서 논증하는 위험이 있다.</li>
+    <li><strong>어만의 사례들도 본문비평으로 식별된다</strong>: '정통적 부패'가 식별 가능했다는 사실 자체가 원래 독법이 사본 전승 안에 남아 있다는 뜻이다. 대니얼 월리스가 편집한 『Revisiting the Corruption of the New Testament』(2011)는 어만의 사례들을 하나씩 재검토한다.</li>
+    <li><strong>교리적 무게</strong>: 어만이 든 이문들이 개별 본문의 뉘앙스를 바꾸더라도, 기독론·대속론 자체는 다른 수많은 본문에 근거한다.</li>
+  </ul></div>
+</div>
+
+<h3>학술 어만과 대중 어만의 간극</h3>
+<div class="tbl-wrap"><table class="tbl">
+<tr><th>쟁점</th><th>대중서 『Misquoting Jesus』(2005)의 강조</th><th>학술 작업(공저 『The Text of the New Testament』 4판, 2005 등)의 서술</th></tr>
+<tr><td>이문의 규모</td><td>"신약의 단어 수보다 이문이 많다"는 충격적 비교를 전면에 둔다</td><td>이문을 유형별로 분류하고 대다수가 철자·어순 등임을 방법론적으로 설명한다</td></tr>
+<tr><td>원문 복원 가능성</td><td>원문을 알 수 있는지에 대한 회의를 부각한다</td><td>외적·내적 증거로 대부분의 경우 초기 본문을 높은 확률로 재구성하는 방법을 가르친다</td></tr>
+<tr><td>사례 선택</td><td>신학적 파장이 큰 소수 사례에 집중한다</td><td>사례를 전체 이문 분포 속에 위치시킨다</td></tr>
+<tr><td>독자에게 남는 인상</td><td>"성경은 믿을 수 없게 바뀌었다"</td><td>"본문의 역사는 복잡하지만 추적 가능하다"</td></tr>
+</table></div>
+<p>같은 학자가 같은 해에 스승과 함께 개정한 표준 교과서와 대중서의 <strong>온도 차</strong> 자체가 좋은 교육 자료다. 사실(fact)은 거의 같은데, 무엇을 앞세우고 어떤 결론의 어조로 전달하는지가 다르다(토론 논제 2).</p>
+
+<div class="card gold-card">
+<h4 style="margin-top:0;">평가 기준 — 무엇이 실제 쟁점이고 무엇이 수사인가</h4>
+<ul style="margin:0;">
+  <li><strong>실제 쟁점</strong>: 사본이 드문 2세기 초기 전달 과정, 그리고 ④범주 이문들의 판정과 해석적 무게.</li>
+  <li><strong>수사</strong>: 범주를 구분하지 않은 이문 총수의 제시, "원본이 없으니 알 수 없다"는 결론의 비약.</li>
+  <li><strong>반대 방향의 수사도 경계</strong>: "99% 확실하다", "고대 문헌 중 유일하게 완벽하다" 같은 과장도 증거가 말하는 것 이상이다.</li>
+</ul>
+</div>
+</section>
+
+<!-- S6 -->
+<section id="s6">
+<div class="section-title">S6 · 구약 정경 — 어떻게 확정되었나</div>
+<p class="section-subtitle">'결정'이 아닌 '인정'의 역사</p>
+
+<h3>타나크의 3부 구조와 그 증거</h3>
+<p>히브리어 성경은 <strong>토라</strong>(율법)·<strong>느비임</strong>(예언서)·<strong>케투빔</strong>(성문서)의 3부로 구성되며, 머리글자를 따 '타나크'라 부른다. 이 구조가 이미 제2성전 시대에 형성되어 있었다는 증거들이 있다.</p>
+<div class="timeline">
+  <div class="t-item"><div class="t-year">기원전 2세기 후반</div><div class="t-text">벤 시라의 손자가 쓴 『집회서』 그리스어 번역 서문: "율법과 예언서와 그 뒤를 이은 다른 책들"이라는 3부적 표현.</div></div>
+  <div class="t-item"><div class="t-year">1세기</div><div class="t-text">예수께서 "모세의 율법과 선지자의 글과 시편"(눅 24:44)을 언급 — 현행 인쇄본에서 성문서 첫머리에 놓이는 시편으로 세 번째 부분을 대표한 것으로 보인다(성문서의 배열은 전통마다 다르다).</div></div>
+  <div class="t-item"><div class="t-year">1세기 말</div><div class="t-text">요세푸스, 『아피온 반박』 1.8: 유대인에게는 신뢰할 만한 책이 22권(모세 5권, 예언자 13권, 찬송과 교훈 4권)뿐이며 아무도 감히 더하거나 빼지 못했다고 서술.</div></div>
+</div>
+
+<h3>얌니아(야브네) '회의' 신화의 교정</h3>
+<div class="card accent-card">
+<p><strong>통설</strong>: 기원후 90년경 야브네(얌니아)에서 랍비들의 '공의회'가 열려 히브리어 성경의 정경 목록을 공식 결정했다. 이 가설은 19세기 하인리히 그레츠가 제안하고 널리 퍼졌다.</p>
+<p style="margin-bottom:0;"><strong>교정</strong>: 잭 P. 루이스의 1964년 논문 「What Do We Mean by Jabneh?」 이후, 학계는 야브네에 정경을 '결정'한 공식 회의가 있었다는 증거가 없다는 데 대체로 동의한다. 랍비 문헌이 전하는 야브네의 논의는 이미 권위를 가진 책들 중 아가서·전도서 같은 일부 책의 지위를 두고 벌어진 토론이었다. 정경은 한 회의의 결정이 아니라, <strong>이미 공동체 안에서 기능하던 권위의 인정</strong>에 가깝다.</p>
+</div>
+
+<h3>외경(제2정경) 문제</h3>
+<p>70인역 사본들에는 히브리어 성경에 없는 책들(토비트, 유딧, 마카베오서, 지혜서, 집회서, 바룩 등)이 함께 실려 있었다. 4–5세기 히에로니무스는 라틴어 번역(벌게이트)을 위해 히브리어 원문으로 돌아가며('헤브라이카 베리타스', 히브리어 원문의 진실) 이 책들을 교회에서 읽을 만한 책으로 구별했지만, 중세 서방 교회는 대체로 이를 성경과 함께 사용했다. 종교개혁기에 루터는 이 책들을 구약과 신약 사이에 별도로 묶어 "성경과 같지는 않으나 읽기에 유익하다"는 취지로 분류했고, 가톨릭교회는 <strong>트리엔트 공의회(1546)</strong>에서 이를 정경으로 공식 선언했다.</p>
+<div class="tbl-wrap"><table class="tbl">
+<tr><th>전통</th><th>구약 권수</th><th>외경(제2정경)에 대한 입장</th></tr>
+<tr><td>개신교</td><td>39권</td><td>히브리어 성경 범위를 정경으로. 외경은 정경 밖(읽기에 유익한 역사·경건 문헌으로 보는 전통도 있음)</td></tr>
+<tr><td>가톨릭</td><td>46권</td><td>토비트·유딧·마카베오 상하·지혜서·집회서·바룩 + 에스더·다니엘의 그리스어 추가 부분을 '제2정경'으로 인정(트리엔트, 1546)</td></tr>
+<tr><td>정교회</td><td>교회마다 약간 차이</td><td>가톨릭 제2정경에 더해 에스드라1서, 마카베오3서, 므낫세의 기도, 시편 151편 등을 포함하는 경우가 많음</td></tr>
+</table></div>
+<p style="font-size:.88rem;color:var(--muted);">※ 이 표는 비교를 위한 정보다. 각 전통은 자기 정경의 근거를 교회사와 신학 속에서 진지하게 제시한다.</p>
+</section>
+
+<!-- S7 -->
+<section id="s7">
+<div class="section-title">S7 · 신약 정경 — '선정'이 아니라 '인정'</div>
+<p class="section-subtitle">2세기부터 4세기까지의 증거 사슬</p>
+
+<h3>자극 요인</h3>
+<ul>
+  <li><strong>마르키온</strong>(140년대): 구약의 하나님과 예수의 하나님을 분리하고, 편집한 누가복음과 바울서신 10편만을 자기 '정경'으로 삼았다(144년경 로마 교회에서 출교). 축소 정경에 대한 대응으로 교회는 무엇을 읽어 왔는지 명시할 필요를 느꼈다.</li>
+  <li><strong>영지주의 문서</strong>: 비밀 지식을 표방하는 새 '복음서'들의 등장.</li>
+  <li><strong>몬타누스주의</strong>(2세기 중반): 새로운 예언이 사도적 계시를 보충한다는 주장 — 계시의 범위를 묻게 했다.</li>
+</ul>
+
+<h3>증거 사슬</h3>
+<div class="timeline">
+  <div class="t-item"><div class="t-year">2세기 전반</div><div class="t-text">파피아스(유세비우스가 전함)가 마가·마태복음의 기원을 언급. 150년경 유스티누스는 '사도들의 회고록'(복음서)이 주일 예배에서 예언서와 함께 낭독된다고 기록.</div></div>
+  <div class="t-item"><div class="t-year">170–200년경(?)</div><div class="t-text"><strong>무라토리 단편</strong>: 로마에서 쓰인 것으로 보이는 가장 오래된 신약 목록의 단편. 소수 학자들은 4세기 작품으로 보기도 한다.</div></div>
+  <div class="t-item"><div class="t-year">180년경</div><div class="t-text"><strong>이레네우스</strong>, 『이단 반박』: 복음서는 넷보다 많지도 적지도 않다는 '4복음서' 논증.</div></div>
+  <div class="t-item"><div class="t-year">3–4세기</div><div class="t-text">오리게네스를 거쳐 <strong>유세비우스</strong>(『교회사』 3.25)가 책들을 '인정된 것'(<span class="grk">ὁμολογούμενα</span>, homologoumena)·'논쟁되는 것'(<span class="grk">ἀντιλεγόμενα</span>, antilegomena: 야고보·유다·베드로후서·요한2·3서 등)·'위서'(<span class="grk">νόθα</span>, notha)로 분류.</div></div>
+  <div class="t-item"><div class="t-year">367년</div><div class="t-text"><strong>아타나시우스의 제39차 부활절 서신</strong>: 오늘날의 신약 27권과 정확히 일치하는 최초의 목록.</div></div>
+  <div class="t-item"><div class="t-year">393 / 397년</div><div class="t-text">히포 회의와 카르타고 회의가 이 목록을 확인 — 지역 교회 회의의 확인이었다.</div></div>
+</div>
+
+<h3>정경의 기준 3+1</h3>
+<div class="spectrum-grid">
+  <div class="spec-card"><div class="spec-label">기준 1</div><div class="spec-title">사도성</div><div class="spec-body">사도 또는 사도와 긴밀한 인물과 연결되는가.</div></div>
+  <div class="spec-card"><div class="spec-label">기준 2</div><div class="spec-title">정통성</div><div class="spec-body">교회가 받은 '신앙의 규범'(regula fidei)과 일치하는가.</div></div>
+  <div class="spec-card"><div class="spec-label">기준 3</div><div class="spec-title">보편성</div><div class="spec-body">여러 지역 교회에서 널리, 지속적으로 사용되었는가.</div></div>
+  <div class="spec-card"><div class="spec-label">+1</div><div class="spec-title">자증적 권위</div><div class="spec-body">마이클 크루거(『Canon Revisited』, 2012)는 정경이 교회의 결정이나 역사적 기준만으로 설명되지 않고, 성경이 그 신적 특질을 통해 스스로를 증언하며 교회는 그것을 알아본다는 개혁파적 '자증 모델'을 제시한다.</div></div>
+</div>
+
+<div class="warn-box"><strong>🎬 '다빈치 코드' 류 음모론 교정</strong>: "325년 니케아 공의회에서 콘스탄티누스 황제가 성경에 들어갈 책을 골랐다"는 주장은 사료에 근거가 없다. 니케아는 성자의 신성(아리우스 논쟁)을 다룬 회의였고 정경 목록을 논의하지 않았다. 4복음서·바울서신·사도행전 등 신약의 핵심 약 20권은 2세기 말에 이미 교회에서 권위 있게 기능하고 있었다.</div>
+
+<h3>외경 복음서의 실체 — 도마복음을 중심으로</h3>
+<p>'숨겨진 복음서'는 대중매체의 단골 소재다. 가장 자주 거론되는 <strong>도마복음</strong>은 서사 없이 예수의 말씀 114개를 모은 어록 모음으로, 온전한 본문은 1945년 이집트 나그 함마디에서 발견된 콥트어 사본에 있고 그리스어 단편(옥시링쿠스 파피루스)도 전한다. 다수 학자는 2세기 중반의 작품으로 보며, 1세기의 독립 전승을 일부 보존했다는 소수 견해도 있다. 공관복음과 겹치는 말씀도 있지만 영지주의적 경향의 말씀도 있어, 초대 교회가 이 책을 네 복음서와 같은 권위로 읽었다는 증거는 없다. 다른 외경 복음서들(유다복음, 마리아복음 등)은 대체로 더 늦은 2–3세기 이후의 작품이다.</p>
+<div class="xlink">🔗 정경의 기준과 권위론의 개관은 <a href="https://isaac-math.github.io/Biblical-Authority/BA_high.html#s6">BA 대학생 버전 S6(정경론)</a>, 복음서의 역사적 신뢰성 반론들은 <a href="https://isaac-math.github.io/Jesus-History/JH_high.html#s11">JH 대학생 버전 S11(반론 종합)</a>에서 이어서 볼 수 있다.</div>
+</section>
+
+<!-- S8 -->
+<section id="s8">
+<div class="section-title">S8 · 번역의 역사 1 — 70인역에서 KJV까지</div>
+<p class="section-subtitle">말씀은 처음부터 번역되는 말씀이었다</p>
+
+<div class="timeline">
+  <div class="t-item"><div class="t-year">기원전 3세기~</div><div class="t-text"><strong>70인역</strong>: 『아리스테아스 서신』은 72명의 장로가 72일 만에 토라를 번역했다고 전하지만 이는 전설적 서술이다. 실제로는 알렉산드리아 유대 공동체를 위해 토라가 먼저, 나머지 책은 이후 수 세기에 걸쳐 번역되었다.</div></div>
+  <div class="t-item"><div class="t-year">고대 후기</div><div class="t-text"><strong>타르굼</strong>: 회당 낭독 후 아람어로 풀어 전한 번역·해설. <strong>페시타</strong>: 시리아어 교회의 표준 번역.</div></div>
+  <div class="t-item"><div class="t-year">382년~</div><div class="t-text"><strong>히에로니무스의 벌게이트</strong>: 교황 다마수스의 요청으로 시작. 구약은 70인역이 아닌 히브리어 원문에서 번역하는 '헤브라이카 베리타스' 원칙을 세워 당대에 논란을 빚었다. 이후 천 년간 서방 교회의 성경.</div></div>
+  <div class="t-item"><div class="t-year">1382년경</div><div class="t-text"><strong>위클리프파(롤러드) 성경</strong>: 벌게이트에서 옮긴 영어 필사본 성경(초판 1382년경, 개정판 1388–95년경). 위클리프 본인이 얼마나 직접 번역했는지는 불확실하다.</div></div>
+  <div class="t-item"><div class="t-year">1522 / 1534</div><div class="t-text"><strong>루터 성경</strong>: 그리스어에서 번역한 '9월 성경'(1522)과 구약을 포함한 전권(1534).</div></div>
+  <div class="t-item"><div class="t-year">1526 / 1536</div><div class="t-text"><strong>틴들</strong>: 1525년 쾰른 인쇄가 중단된 뒤 1526년 보름스에서 그리스어 직역 영어 신약 인쇄. 1535년 안트베르펜에서 체포되어 1536년 10월 초 빌보르드에서 처형(교살 후 화형). 마지막 기도 "주여, 영국 왕의 눈을 열어 주소서"는 존 폭스의 기록으로 전한다.</div></div>
+  <div class="t-item"><div class="t-year">1611</div><div class="t-text"><strong>킹제임스 성경(KJV)</strong>: 제임스 1세의 후원으로 여러 번역위원회가 기존 영어 성경들을 개정. 신약 본문의 상당 부분이 틴들의 번역을 이어받아, 틴들은 '영어 성경 어휘의 아버지'로 불린다.</div></div>
+</div>
+
+<div class="card sky-card">
+<h4 style="margin-top:0;">KJV와 그 저본의 한계</h4>
+<p style="margin:0;">KJV는 영어 문학사의 금자탑이지만, 신약 저본인 공인 본문(TR)은 에라스무스 이래 16세기에 입수 가능했던 소수의 후대 사본에 기초한다. 시내산사본·바티칸사본·파피루스 대부분은 아직 알려지지 않았거나 활용되지 않은 때였다. 그래서 KJV에는 콤마 요한네움(S4) 같은 후대 첨가가 들어 있다. 이것은 KJV 번역자들의 잘못이 아니라 <strong>그들이 가진 사본의 한계</strong>이며, 본문비평은 바로 그들이 볼 수 없었던 증거를 반영하는 작업이다.</p>
+</div>
+</section>
+
+<!-- S9 -->
+<section id="s9">
+<div class="section-title">S9 · 번역의 역사 2 — 한국어 성경 전래사</div>
+<p class="section-subtitle">선교사보다 먼저 도착한 성경</p>
+
+<h3>로스역 — 만주에서 번역된 한국어 성경</h3>
+<p>스코틀랜드 연합장로교 선교사 <strong>존 로스</strong>(1842–1915)는 1872년 만주에 파송되어 영구(우장)와 심양(묵덴)에서 일했고, 동료 존 매킨타이어(1837–1905)가 합류했다. 1874년 고려문에서 백홍준의 부친을 만나고 1876년 의주 출신 약재상 <strong>이응찬</strong>을 만나 한국어를 배우기 시작한 로스는, 국경 무역에 종사하던 의주 출신 상인들과 번역을 시작했다. 한국인 조력자들이 1852년판 한문 신약을 한국어로 옮기면, 로스와 매킨타이어가 그리스어 원문과 영어 개역본(RV)에 비추어 검토하는 방식이었다.</p>
+<p>이응찬, 백홍준, 서상륜, 이성하, 김진기, 최성균 등이 번역과 반포에 참여했고, 식자공 김청송이 조판을 맡았다. 그리고 <strong>1882년 3월, 심양 문광서원에서 『예수셩교누가복음젼셔』</strong>가 간행되었다(국가등록문화유산, 구 등록문화재 제668호·2016년 등록, 대한성서공회 소장). 요한·마가복음 등이 이어졌고, 1887년 신약 전체 『예수셩교젼셔』가 완성되었다. 서상륜 등은 이 책들을 품고 국경을 넘어 권서(勸書)로 전했다.</p>
+<div class="card gold-card">
+<p style="margin:0;"><strong>세계 선교사에서 드문 장면</strong>: 개신교 선교사의 조선 입국(알렌 1884, 언더우드·아펜젤러 1885) <strong>이전에</strong>, 한국인이 참여해 한국 <strong>밖</strong>에서 번역한 자국어 성경이 있었고, 그 성경을 읽고 믿게 된 사람들의 자생적 신앙 공동체가 있었다. 서상륜·서경조 형제를 중심으로 황해도 소래에 세워진 교회는 한국인이 스스로 세운 첫 개신교회로 알려져 있다. 다만 설립 연도는 1883년, 1884년, 1885년, 1887년 등 교단과 학자에 따라 견해가 갈리며(당회록 등 1차 사료의 소실), 여기서는 '1883–1885년경'으로 적는다.</p>
+</div>
+<div class="warn-box"><strong>사료의 불일치</strong>: 로스역 조력자들의 세례 연도(1876 / 1879 / 1882 등)는 백과사전 항목 사이에서도 서로 다르게 기록되어 있어, 이 자료는 '최초의 수세자'를 특정하지 않는다.</div>
+
+<h3>이수정역과 선교사 입국</h3>
+<p>일본에서 세례를 받은(1883) <strong>이수정</strong>은 미국성서공회의 후원으로 마가복음을 번역해 1885년 2월 요코하마에서 『신약마가젼복음셔언ᄒᆡ』를 간행했다. 한문 성경을 저본으로 한 국한문 혼용 형태였다. 1885년 4월 5일 부활절, 언더우드와 아펜젤러가 이 마가복음을 들고 제물포에 도착했다.</p>
+
+<h3>번역본 연표</h3>
+<div class="tbl-wrap"><table class="tbl">
+<tr><th>연도</th><th>번역</th><th>비고</th></tr>
+<tr><td>1882–1887</td><td>로스역</td><td>누가복음(1882) → 신약 전서 『예수셩교젼셔』(1887). 서북 방언 기반</td></tr>
+<tr><td>1885</td><td>이수정역 마가복음</td><td>요코하마, 국한문 혼용</td></tr>
+<tr><td>1900 / 1911</td><td>구역(舊譯)</td><td>『신약젼셔』(1900), 구약 포함 『셩경젼셔』(1911)</td></tr>
+<tr><td>1938</td><td>개역</td><td>『셩경 개역』</td></tr>
+<tr><td>1952 / 1961</td><td>개역한글</td><td>한글맞춤법통일안에 따른 개정(1952) → 1961년판(흔히 '개역한글'의 기준판)</td></tr>
+<tr><td>1971 / 1977</td><td>공동번역</td><td>개신교·가톨릭 공동 번역. 신약(1971), 전권(1977), 개정판(1999)</td></tr>
+<tr><td>1993 → 2004</td><td>표준새번역 → 새번역</td><td>2001년 개정판을 거쳐 2004년부터 『새번역』</td></tr>
+<tr><td>1998</td><td>개역개정</td><td>대한성서공회. 최종 개정 4판(2005년 11월 확정판). 오늘날 한국 교회 예배의 표준</td></tr>
+<tr><td>2021 / 2024</td><td>새한글성경</td><td>신약과 시편(2021), 전권(2024)</td></tr>
+</table></div>
+
+<h3>'하나님/하느님' 용어사 — 정보로서</h3>
+<p>1882년 로스역 누가복음에는 '하느님'(일부 '하나님'과 병존)이 쓰였고, 1883년 이후 로스역은 '하나님'으로 옮겨 갔다. 1906년 신약과 1911년 『셩경젼셔』는 '하ᄂᆞ님'을 채택했는데, 이 결정 과정에서 언더우드는 다른 용어(샹뎨, 텬쥬 등)를 주장하기도 했다. 어원적으로는 두 형태 모두 '하늘+님'에서 온 말이지만, 번역위원 게일은 '하ᄂᆞ'를 '하나·크다'의 뜻으로 풀이했고, 1911년 이후 '하ᄂᆞ님'은 유일하신 창조주를 강조하는 이름으로 자리 잡았다(김중은, 2022). 1977년 공동번역에서는 가톨릭(천주)과 개신교(하나님)가 함께 한 걸음씩 물러나 표준어 '하느님'에 합의했고, 현재 가톨릭 성경도 '하느님'을 쓴다. 이 용어 선택이 신학적 결정인지 문화적 결정인지는 토론 논제 5에서 다룬다.</p>
+<p style="font-size:.88rem;color:var(--muted);">※ 대한성서공회는 1895년 11월 영국성서공회 한국지부로 출발했다(대한성서공회 연혁). 이 섹션의 연도·인명은 대한성서공회 번역사 자료와 한국민족문화대백과사전을 대조해 확인했다.</p>
+</section>
+
+<!-- S10 -->
+<section id="s10">
+<div class="section-title">S10 · 번역 이론 — 번역은 반역인가</div>
+<p class="section-subtitle">모든 번역은 해석이다 — 문제는 어떤 해석인가</p>
+
+<p>미국성서공회의 언어학자 <strong>유진 나이다</strong>(Eugene A. Nida)는 번역의 두 방향을 구별했다. <strong>형식적 등가</strong>는 원문의 형태(어휘·어순·구문)를 가능한 한 보존하려 하고, <strong>동적 등가</strong>(뒤에 '기능적 등가'로 부름)는 원문이 원래 독자에게 준 것과 같은 효과를 오늘의 독자에게 주려 한다. 나이다와 테이버의 『The Theory and Practice of Translation』(1969)은 이 이론을 성경 번역 현장에 체계화했다.</p>
+
+<div class="spectrum-bar">
+  <div class="spectrum-track"></div>
+  <div class="spectrum-labels"><span>← 형식적 등가(직역)</span><span>동적·기능적 등가(의역) →</span></div>
+  <div class="spectrum-items">
+    <div><strong>KJV · NASB · ESV</strong><br>개역한글 · 개역개정</div>
+    <div><strong>NIV</strong><br>새번역</div>
+    <div><strong>NLT</strong><br>공동번역</div>
+    <div><strong>메시지</strong><br>현대인의성경</div>
+  </div>
+</div>
+<p style="font-size:.86rem;color:var(--muted);">※ 배치는 번역 철학의 대략적 경향을 보여주는 교육용 도식이다. 같은 번역 안에서도 구절마다 선택이 다르다.</p>
+
+<h3>번역이 불가피하게 해석인 사례</h3>
+<div class="tab-bar">
+  <button class="tab-btn active" onclick="switchTab('s10','s10t1',this)">헤세드</button>
+  <button class="tab-btn" onclick="switchTab('s10','s10t2',this)">로고스</button>
+  <button class="tab-btn" onclick="switchTab('s10','s10t3',this)">사르크스</button>
+</div>
+<div id="s10t1" class="tab-panel active">
+<p><span class="heb">חֶסֶד</span> (헤세드) — 언약에 근거한 신실하고 변함없는 사랑. 개역개정은 주로 '인자', '인애'로, 영어 번역은 'lovingkindness'(KJV), 'steadfast love'(ESV), 'mercy' 등으로 옮긴다. 어느 한 단어도 '언약적 충성'과 '자비로운 사랑'을 동시에 담지 못한다.</p>
+</div>
+<div id="s10t2" class="tab-panel">
+<p><span class="grk">λόγος</span> (logos, 로고스) — 요 1:1의 이 단어는 '말', '이성', '원리'를 함께 품는다. 한국어 성경은 '말씀'을, 중국어 성경은 '道'(도)를 택했다. '말씀'은 구약의 '하나님의 말씀'과의 연결을, '도'는 동아시아 철학의 우주적 원리와의 공명을 강조한다.</p>
+</div>
+<div id="s10t3" class="tab-panel">
+<p><span class="grk">σάρξ</span> (sarx, 사르크스) — 바울에게 이 단어는 '몸', '인간 존재', '죄에 기우는 옛 본성'을 넘나든다. NIV 1984년판은 많은 곳에서 'sinful nature'로 풀었으나, 2011년판은 해석을 지나치게 고정한다는 비판을 반영해 상당수를 다시 'flesh'로 돌렸다. 개역개정의 '육신/육체'도 문맥에 따라 다른 의미를 독자가 판단해야 한다.</p>
+</div>
+
+<h3>세계 번역 선교의 현재</h3>
+<div class="num-cards">
+  <div class="num-card"><div class="num">7,393</div><div class="num-label">전 세계 언어</div></div>
+  <div class="num-card"><div class="num">795</div><div class="num-label">성경 전권이 있는 언어<br>(약 62억 명)</div></div>
+  <div class="num-card"><div class="num">1,815</div><div class="num-label">신약까지 있는 언어</div></div>
+  <div class="num-card"><div class="num">3,272</div><div class="num-label">성경이 전혀 없는 언어<br>(약 1억 2,300만 명)</div></div>
+</div>
+<p style="font-size:.88rem;color:var(--muted);">출처: 세계성서공회연합(UBS), <em>Translation Statistics Report 2025</em>(2026년 발행, 2026년 1월 1일 기준, ProgressBible 데이터). 이 밖에 일부 책만 있는 언어가 1,511개이며, 자국어로 성경 전권을 읽지 못하는 사람은 약 15억 명이다. 위클리프 국제연대(Wycliffe Global Alliance)도 별도 통계(2025년 8월 기준)를 내는데, 언어 집계 방식이 달라 두 기관의 수치를 섞어 쓰지 않았다.</p>
+</section>
+
+<!-- S11 -->
+<section id="s11">
+<div class="section-title">S11 · 오늘의 본문 — 디지털 사본학 시대</div>
+<p class="section-subtitle">사본을 '보는' 시대에서 '계산하는' 시대로</p>
+
+<h3>현대 비평본</h3>
+<div class="card-grid">
+  <div class="card primary-card"><h4 style="margin-top:0;">구약: BHS → BHQ</h4><p style="margin:0;font-size:.88rem;">레닌그라드 사본을 저본으로 한 <em>Biblia Hebraica Stuttgartensia</em>(BHS)가 표준이며, 사해사본 자료를 반영한 후속판 <em>Biblia Hebraica Quinta</em>(BHQ)가 분책으로 출간 중이다(2030년대 초 완간 예상).</p></div>
+  <div class="card primary-card"><h4 style="margin-top:0;">신약: NA28/UBS5 → NA29/UBS6</h4><p style="margin:0;font-size:.88rem;">학술 표준인 네슬레-알란트 28판(NA28, 2012)과 번역자용 UBS판이 쓰인다. UBS6은 2025년 출간되었고, 같은 본문을 공유하는 NA29는 2026년 출간이 예고되었다. 새 판은 ECM의 결과를 반영해 마가·사도행전·계시록 본문을 조정하고, 책 순서도 초기 사본의 배열(복음서–사도행전–공동서신–바울서신–계시록)로 바꾼다.</p></div>
+  <div class="card primary-card"><h4 style="margin-top:0;">ECM (<em>Editio Critica Maior</em>)</h4><p style="margin:0;font-size:.88rem;">INTF가 주도하는 대형 비평본 프로젝트. 공동서신(1997~, 2판 2013), 사도행전(2017), 마가복음(2021), 계시록(2024)이 출간되었고, 2030년경 완간을 목표로 한다.</p></div>
+</div>
+
+<h3>CBGM — 컴퓨터 기반 계보 방법</h3>
+<p>수천 개 사본의 계보를 사람이 손으로 그리는 것은 불가능하다. INTF의 게르트 밍크가 개발한 <strong>CBGM</strong>(Coherence-Based Genealogical Method)은 사본 자체가 아니라 <strong>사본에 담긴 본문</strong>들 사이의 관계를 전산으로 비교해, 각 이문 지점에서 어느 독법이 다른 독법의 '조상'인지에 대한 판단들이 전체적으로 얼마나 일관(coherence)되는지를 계산한다. 기계가 판정을 대신하는 것이 아니라, 학자의 판정을 수천 지점에서 서로 검증하게 해주는 도구다.</p>
+<div class="card sky-card">
+<p style="margin:0;"><strong>사례 — 유다서 5절</strong>: ECM 공동서신 2판(2013)과 이를 반영한 NA28은 유다서 5절에서 "주께서 백성을 애굽에서 구원하셨다"의 '주'(<span class="grk">κύριος</span>, kyrios) 대신 '예수'(<span class="grk">Ἰησοῦς</span>, Iēsous)를 본문으로 채택했다 — 출애굽 사건에 선재하신 그리스도를 연결하는, 신학적으로 흥미로운 초기 독법이다. 같은 과정에서 NA28은 벧후 3:10에서 그리스어 사본에는 없고 일부 고대 역본이 지지하는 '드러나지 않으리라'(<span class="grk">οὐχ εὑρεθήσεται</span>, ouch heurethēsetai)를 본문으로 택했다(S4, <a href="https://isaac-math.github.io/Eco-Theology/ECO_high.html#s5">ECO S5</a>).</p>
+</div>
+
+<h3>사본 디지털화 — 학생이 직접 P52를 보는 시대</h3>
+<ul>
+  <li><a href="https://www.csntm.org/" target="_blank" rel="noopener">CSNTM</a>(신약사본연구소): 대니얼 월리스가 2002년 설립, 전 세계 도서관의 그리스어 신약 사본을 고해상도로 촬영해 공개.</li>
+  <li><a href="https://codexsinaiticus.org/" target="_blank" rel="noopener">Codex Sinaiticus Project</a>: 네 곳에 흩어진 시내산사본 전체를 2009년 온라인으로 재결합.</li>
+  <li><a href="https://www.deadseascrolls.org.il/" target="_blank" rel="noopener">Leon Levy Dead Sea Scrolls Digital Library</a>: 이스라엘 유물청의 사해사본 조각 고해상도 이미지.</li>
+  <li>바티칸 도서관, 영국 도서관, 맨체스터 존 라일랜즈 도서관(P52) 등도 주요 사본의 디지털 이미지를 공개하고 있다.</li>
+</ul>
+
+<div class="warn-box"><strong>AI와 사본학</strong>: S2의 Enoch 연구처럼, 필적 분석·조각 맞추기·손상된 문자 판독에 AI가 쓰이기 시작했다. 사본학은 가장 오래된 인문학 중 하나이면서 가장 새로운 기술을 받아들이는 분야가 되었다. 다만 AI 추정은 검증 가능한 방법과 전문가 판정 속에서만 의미가 있다 — 이는 <a href="https://isaac-math.github.io/AI-Faith/AI_high.html#s1">AI 시리즈</a>가 강조하는 '도구로서의 AI'의 좋은 사례이기도 하다.</div>
+</section>
+
+<!-- S12 -->
+<section id="s12">
+<div class="section-title">S12 · 학자 카드 9인</div>
+<p class="section-subtitle">찾고, 편집하고, 논쟁하고, 번역한 사람들</p>
+<div class="person-grid">
+<div class="person-card"><div class="person-name">콘스탄틴 폰 티셴도르프</div><div class="person-role">독일 성경학자 (1815–1874)</div><div class="person-contrib">시내산사본 발견(1844/1859)과 그리스어 신약 비평본(8판) 편집. 19세기 '사본 사냥'의 상징.</div></div>
+<div class="person-card"><div class="person-name">브루스 메츠거</div><div class="person-role">프린스턴 신학교 교수 (1914–2007)</div><div class="person-contrib">『The Text of the New Testament』, 『A Textual Commentary』, 『The Canon of the NT』. UBS 그리스어 신약 편집위원.</div></div>
+<div class="person-card opp"><div class="person-name">바트 어만</div><div class="person-role">노스캐롤라이나대(채플힐) 교수 (1955– ) · 반대측 대표</div><div class="person-contrib">『The Orthodox Corruption of Scripture』(학술), 『Misquoting Jesus』(대중). 메츠거 공저 4판의 공동 저자이자 가장 영향력 있는 비판자.</div></div>
+<div class="person-card"><div class="person-name">대니얼 월리스</div><div class="person-role">댈러스 신학교 교수</div><div class="person-contrib">CSNTM 설립(2002), 『Revisiting the Corruption of the New Testament』(2011) 편집. 어만과 여러 차례 공개 토론.</div></div>
+<div class="person-card"><div class="person-name">에마누엘 토브</div><div class="person-role">히브리대학교 교수</div><div class="person-contrib">사해사본 공식 출간 시리즈(DJD) 편집장. 『Textual Criticism of the Hebrew Bible』 — 히브리어 본문비평의 표준서.</div></div>
+<div class="person-card"><div class="person-name">히에로니무스</div><div class="person-role">교부·번역가 (347년경–420)</div><div class="person-contrib">벌게이트 번역. '헤브라이카 베리타스' 원칙으로 히브리어 원문 중심의 구약 번역을 시도.</div></div>
+<div class="person-card"><div class="person-name">윌리엄 틴들</div><div class="person-role">번역가·순교자 (1494년경–1536)</div><div class="person-contrib">그리스어 직역 영어 신약(1526). 그의 어휘와 표현이 KJV를 거쳐 현대 영어에 스며들었다.</div></div>
+<div class="person-card"><div class="person-name">유진 나이다</div><div class="person-role">미국성서공회 언어학자 (1914–2011)</div><div class="person-contrib">형식적 등가/동적 등가 이론. 20세기 성경 번역 운동의 방법론을 세웠다.</div></div>
+<div class="person-card"><div class="person-name">존 로스</div><div class="person-role">스코틀랜드 선교사 (1842–1915)</div><div class="person-contrib">의주 출신 한국인들과 함께 첫 한국어 성경 로스역(1882–1887)을 번역. 한국 교회 자생 신앙의 뿌리.</div></div>
+</div>
+</section>
+
+<!-- S13 -->
+<section id="s13">
+<div class="section-title">S13 · 용어 사전</div>
+<div class="gloss-grid">
+<div class="gloss-item"><div class="gloss-term">자필 원본 (autograph)</div><div class="gloss-def">저자가 직접 쓰거나 받아쓰게 한 최초의 문서. 성경을 포함한 고대 문헌 대부분에서 현존하지 않는다.</div></div>
+<div class="gloss-item"><div class="gloss-term">이문 (variant)</div><div class="gloss-def">같은 본문 지점에서 사본들 사이에 나타나는 서로 다른 독법.</div></div>
+<div class="gloss-item"><div class="gloss-term">파피루스 · 대문자 · 소문자 사본</div><div class="gloss-def">재료와 서체에 따른 신약 사본 분류. 파피루스(가장 이른 시기), 양피지 대문자(3/4–10세기), 소문자(9세기 이후).</div></div>
+<div class="gloss-item"><div class="gloss-term">마소라 · 케레/케티브</div><div class="gloss-def">마소라 학자들의 모음·악센트·난외주 체계. 케티브(<span class="heb">כְּתִיב</span>)는 쓰인 자음 본문, 케레(<span class="heb">קְרֵי</span>)는 읽도록 지시한 형태.</div></div>
+<div class="gloss-item"><div class="gloss-term">70인역 (LXX)</div><div class="gloss-def">기원전 3세기부터 알렉산드리아에서 이루어진 그리스어 구약 번역. 신약 저자들이 자주 인용했다.</div></div>
+<div class="gloss-item"><div class="gloss-term">벌게이트 (Vulgate)</div><div class="gloss-def">히에로니무스가 주도한 라틴어 성경(382년~). 천 년 이상 서방 교회의 표준.</div></div>
+<div class="gloss-item"><div class="gloss-term">사해사본 · 쿰란</div><div class="gloss-def">1946–56년 사해 서안 쿰란 일대 11개 동굴에서 발견된 기원전 3세기–기원후 1세기의 문서들.</div></div>
+<div class="gloss-item"><div class="gloss-term">lectio difficilior potior</div><div class="gloss-def">"더 어려운 독법이 우선한다" — 필경사가 어려운 표현을 쉽게 고쳤을 가능성이 더 높다는 내적 증거 원칙.</div></div>
+<div class="gloss-item"><div class="gloss-term">콤마 요한네움</div><div class="gloss-def">요일 5:7–8의 삼위일체 증언 삽입구. 라틴어 전통에서 유래한 후대 첨가로 판정된다.</div></div>
+<div class="gloss-item"><div class="gloss-term">공인 본문 (Textus Receptus)</div><div class="gloss-def">에라스무스 이래 16–17세기 인쇄 그리스어 신약 본문 계통. KJV의 저본.</div></div>
+<div class="gloss-item"><div class="gloss-term">정경 (<span class="grk">κανών</span>, kanōn)</div><div class="gloss-def">'곧은 막대기, 자'에서 온 말. 신앙과 삶의 기준으로 인정된 권위 있는 책들의 목록.</div></div>
+<div class="gloss-item"><div class="gloss-term">제2정경 · 외경</div><div class="gloss-def">70인역 전통에 포함되었으나 히브리어 성경에 없는 책들. 가톨릭은 '제2정경', 개신교는 '외경'으로 부른다.</div></div>
+<div class="gloss-item"><div class="gloss-term">무라토리 단편</div><div class="gloss-def">가장 오래된 신약 목록으로 알려진 라틴어 단편(전통적으로 170–200년경, 4세기설도 있음).</div></div>
+<div class="gloss-item"><div class="gloss-term">형식적 등가 · 동적 등가</div><div class="gloss-def">나이다의 번역 이론. 원문의 형태 보존(형식)과 원문이 준 효과의 재현(동적·기능적)을 구별한다.</div></div>
+<div class="gloss-item"><div class="gloss-term">NA28 · ECM</div><div class="gloss-def">네슬레-알란트 그리스어 신약 28판(학술 표준)과 대형 비평본 프로젝트 <em>Editio Critica Maior</em>.</div></div>
+<div class="gloss-item"><div class="gloss-term">CBGM</div><div class="gloss-def">컴퓨터 기반 계보 방법. 사본 본문들 사이의 계보적 일관성을 전산으로 분석해 원문 판정을 돕는다.</div></div>
+</div>
+</section>
+
+<!-- S14 -->
+<section id="s14">
+<div class="section-title">S14 · 토론 논제</div>
+<div class="discuss-card"><div class="discuss-num">논제 1</div><div class="discuss-q">"원본 없이 원문을 말할 수 있는가" — 본문비평의 목표를 '저자의 원문 복원'으로 볼 것인지 '복원 가능한 최초의 본문(초기 본문)'으로 볼 것인지를 둘러싼 현대 논쟁을 평가하라.</div><div class="discuss-hint">목표를 '초기 본문'으로 낮추는 것이 겸손인지 후퇴인지, 영감 교리(BA 시리즈)와 어떻게 연결되는지 생각해보라.</div></div>
+<div class="discuss-card"><div class="discuss-num">논제 2</div><div class="discuss-q">어만의 대중서와 그가 메츠거와 함께 개정한 학술서 사이의 간극은 무엇을 말해주는가 — 학문의 대중화 윤리를 논하라.</div><div class="discuss-hint">S5의 비교표를 활용하되, 반대 방향의 과장(변증서의 "99% 확실") 역시 같은 기준으로 평가하라.</div></div>
+<div class="discuss-card"><div class="discuss-num">논제 3</div><div class="discuss-q">막 16:9–20이 후대 첨가라면, 그 단락으로 설교해도 되는가 — 본문비평과 강단의 관계를 설계하라.</div><div class="discuss-hint">요 7:53–8:11처럼 '원문은 아니나 진정한 전승일 수 있는 단락'과 콤마 요한네움처럼 '교리적 해설의 유입'을 같은 방식으로 다뤄야 하는지 구별해보라.</div></div>
+<div class="discuss-card"><div class="discuss-num">논제 4</div><div class="discuss-q">정경은 '교회가 만든 목록'인가 '교회가 인정한 권위'인가 — 크루거의 자증 모델과 공동체 인정 모델을 대질하라.</div><div class="discuss-hint">S7의 증거 사슬에서 '논쟁되는 책들'(유세비우스)의 존재가 각 모델에 어떤 문제를 던지는지 검토하라.</div></div>
+<div class="discuss-card"><div class="discuss-num">논제 5</div><div class="discuss-q">번역에서 '하나님/하느님' 같은 용어 선택은 신학적 결정인가 문화적 결정인가 — 로스역의 선택을 사례로 논하라.</div><div class="discuss-hint">S9의 용어사와 S10의 '로고스→도' 사례를 함께 놓고, 번역어가 기존 문화 개념을 '빌리는' 것의 득과 실을 따져보라.</div></div>
+<div class="discuss-card"><div class="discuss-num">논제 6</div><div class="discuss-q">성경이 전혀 없는 언어가 여전히 3천 개가 넘는다는 사실은 한국 교회에 어떤 책임을 지우는가 — 로스역을 '받은' 교회에서 '보내는' 교회로의 전환을 논하라.</div><div class="discuss-hint">로스역이 한국인 번역자의 참여로 가능했다는 점(S9)이 오늘의 번역 선교 방식(현지인 주도 번역)에 주는 함의를 생각해보라.</div></div>
+</section>
+
+<!-- S_REF -->
+<section id="s_ref">
+<div class="section-title">📎 학술 레퍼런스</div>
+<div class="section-subtitle">이 자료에서 참고한 주요 문헌</div>
+
+<div class="ref-group">
+<div class="ref-group-title">① 본문비평 표준서</div>
+<div class="ref-item"><span class="ref-num">1.</span><span>Metzger, Bruce M. &amp; Bart D. Ehrman. <em>The Text of the New Testament: Its Transmission, Corruption, and Restoration</em>. 4th ed. Oxford University Press, 2005. [신약 본문비평의 표준 교과서 — 스승과 제자, 그리고 훗날의 비판자가 함께 개정한 판]</span></div>
+<div class="ref-item"><span class="ref-num">2.</span><span>Metzger, Bruce M. <em>A Textual Commentary on the Greek New Testament</em>. 2nd ed. United Bible Societies, 1994. (한국어판 『신약 그리스어 본문 주석』, 장동수 옮김, 대한성서공회, 2005) — 후속작: Houghton, H. A. G. <em>A Textual Commentary on the Greek New Testament (UBS6)</em>. Deutsche Bibelgesellschaft, 2025. [UBS 편집위원회의 판정 근거 해설]</span></div>
+<div class="ref-item"><span class="ref-num">3.</span><span>Tov, Emanuel. <em>Textual Criticism of the Hebrew Bible</em>. 4th ed., revised and expanded. Fortress Press, 2022. [히브리어 성경 본문비평과 쿰란 본문 분류의 표준서]</span></div>
+<div class="ref-item"><span class="ref-num">4.</span><span>Würthwein, Ernst. <em>The Text of the Old Testament: An Introduction to the Biblia Hebraica</em>. 3rd ed. Revised by Alexander Achilles Fischer. Translated by Erroll F. Rhodes. Eerdmans, 2014. [BHS를 읽기 위한 입문서]</span></div>
+<div class="ref-item"><span class="ref-num">5.</span><span>Parker, D. C. <em>An Introduction to the New Testament Manuscripts and Their Texts</em>. Cambridge University Press, 2008.</span></div>
+<div class="ref-item"><span class="ref-num">6.</span><span>Gurry, Peter J. "The Number of Variants in the Greek New Testament: A Proposed Estimate." <em>New Testament Studies</em> 62.1 (2016): 97–121. [이문 수 약 50만 추정의 근거]</span></div>
+</div>
+
+<div class="ref-group">
+<div class="ref-group-title">② 어만 논쟁</div>
+<div class="ref-item"><span class="ref-num">7.</span><span>Ehrman, Bart D. <em>Misquoting Jesus: The Story Behind Who Changed the Bible and Why</em>. HarperSanFrancisco, 2005. (한국어판 『성경 왜곡의 역사』, 민경식 옮김, 청림출판, 2006) [반대 관점 — 대중서]</span></div>
+<div class="ref-item"><span class="ref-num">8.</span><span>Ehrman, Bart D. <em>The Orthodox Corruption of Scripture</em>. Oxford University Press, 1993; 2nd ed. 2011. [반대 관점 — 학술서]</span></div>
+<div class="ref-item"><span class="ref-num">9.</span><span>Wallace, Daniel B. (ed.). <em>Revisiting the Corruption of the New Testament: Manuscript, Patristic, and Apocryphal Evidence</em>. Kregel, 2011. [어만의 사례들에 대한 복음주의 학자들의 재검토]</span></div>
+</div>
+
+<div class="ref-group">
+<div class="ref-group-title">③ 정경</div>
+<div class="ref-item"><span class="ref-num">10.</span><span>Metzger, Bruce M. <em>The Canon of the New Testament: Its Origin, Development, and Significance</em>. Clarendon Press, 1987.</span></div>
+<div class="ref-item"><span class="ref-num">11.</span><span>Bruce, F. F. <em>The Canon of Scripture</em>. InterVarsity Press, 1988. [확인된 한국어 번역판 없음 — 원서 인용]</span></div>
+<div class="ref-item"><span class="ref-num">12.</span><span>Kruger, Michael J. <em>Canon Revisited: Establishing the Origins and Authority of the New Testament Books</em>. Crossway, 2012. [자증 모델 — 확인된 한국어 번역판 없음]</span></div>
+<div class="ref-item"><span class="ref-num">13.</span><span>Hill, Charles E. <em>Who Chose the Gospels? Probing the Great Gospel Conspiracy</em>. Oxford University Press, 2010. [4복음서 형성에 대한 음모론 교정]</span></div>
+<div class="ref-item"><span class="ref-num">14.</span><span>Lewis, Jack P. "What Do We Mean by Jabneh?" <em>Journal of Bible and Religion</em> 32, no. 2 (1964): 125–132. [얌니아 '회의' 신화 교정의 고전]</span></div>
+</div>
+
+<div class="ref-group">
+<div class="ref-group-title">④ 사해사본·번역사·한국 성경사</div>
+<div class="ref-item"><span class="ref-num">15.</span><span>VanderKam, James &amp; Peter Flint. <em>The Meaning of the Dead Sea Scrolls</em>. HarperSanFrancisco, 2002.</span></div>
+<div class="ref-item"><span class="ref-num">16.</span><span>Daniell, David. <em>William Tyndale: A Biography</em>. Yale University Press, 1994.</span></div>
+<div class="ref-item"><span class="ref-num">17.</span><span>Nida, Eugene A. &amp; Charles R. Taber. <em>The Theory and Practice of Translation</em>. Brill, 1969.</span></div>
+<div class="ref-item"><span class="ref-num">18.</span><span>이만열·옥성득. 『대한성서공회사 I: 조직·성장과 수난』. 대한성서공회, 1993; 류대영·옥성득·이만열. 『대한성서공회사 II: 번역·반포와 권서사업』. 대한성서공회, 1994; 옥성득. 『대한성서공회사 III』. 대한성서공회, 2020. [로스역·이수정역·개역 관련 표준 사료]</span></div>
+<div class="ref-item"><span class="ref-num">19.</span><span>김중은. 「하나님인가, 하느님인가?」. 『성경원문연구』 50 별책 (2022): 84–93. [신명(神名) 번역사]</span></div>
+</div>
+
+<div class="ref-group">
+<div class="ref-group-title">⑤ 온라인·최신 (2026년 9월 기준 확인)</div>
+<div class="ref-item"><span class="ref-num">20.</span><span>Popović, Mladen, Maruf A. Dhali, Lambert Schomaker, et al. "Dating ancient manuscripts using radiocarbon and AI-based writing style analysis." <em>PLOS ONE</em> 20(6): e0323185 (2025). doi:10.1371/journal.pone.0323185 [Enoch 연구 원논문]</span></div>
+<div class="ref-item"><span class="ref-num">21.</span><span>Steinmeyer, Nathan. "Can AI Date the Dead Sea Scrolls?" <em>Bible History Daily</em>, Biblical Archaeology Society, 2025년 6월 20일. [Enoch 연구 해설과 학계 반응]</span></div>
+<div class="ref-item"><span class="ref-num">22.</span><span>United Bible Societies. <em>Translation Statistics Report 2025</em>. 2026. [S10 번역 통계 — 2026년 1월 1일 기준]</span></div>
+<div class="ref-item"><span class="ref-num">23.</span><span>대한성서공회 성경 번역사 자료(bskorea.or.kr) · CSNTM(csntm.org) · Leon Levy Dead Sea Scrolls Digital Library(deadseascrolls.org.il) · Codex Sinaiticus Project(codexsinaiticus.org)</span></div>
+</div>
+
+<div class="ref-warning">
+<strong>⚠️ 레퍼런스 사용 안내:</strong> 신약 사본 수(약 5,700, INTF 2023)와 번역 통계(UBS 2026)는 계속 갱신되는 수치이며, NA29의 출간 시점과 Enoch 연구에 대한 학계 평가는 이 자료 제작 시점(2026년 9월) 기준으로 진행 중이다. 한국어판 표기가 없는 서적은 확인 시점에 번역판을 찾지 못한 것이다. 성경 인용은 개역개정을 따랐다.
+</div>
+</section>
+
+<!-- QUIZ -->
+<section id="s_quiz">
+<div class="section-title">❓ 심화 퀴즈</div>
+<div class="section-subtitle">12문제로 이해도를 점검합니다.</div>
+
+<div id="quiz-section">
+
+<div class="quiz-card"><div class="q-num">문제 1</div><div class="q-text">마소라 학자들의 '케레/케티브' 장치가 보여주는 태도로 가장 알맞은 것은?</div>
+<div class="q-options">
+<button class="q-opt" onclick="checkQ(1,'a','b')">① 어색한 본문은 과감히 고쳐 새 표준을 만들었다</button>
+<button class="q-opt" onclick="checkQ(1,'b','b')">② 전승된 자음 본문은 고치지 않고 두되, 읽는 법을 여백에 따로 지시했다</button>
+<button class="q-opt" onclick="checkQ(1,'c','b')">③ 70인역에 맞추어 히브리어 본문을 수정했다</button>
+<button class="q-opt" onclick="checkQ(1,'d','b')">④ 모음 부호를 없애고 자음만 남겼다</button>
+</div><div class="q-feedback" style="display:none;"></div></div>
+
+<div class="quiz-card"><div class="q-num">문제 2</div><div class="q-text">레닌그라드 사본(1008)의 지위로 옳은 것은?</div>
+<div class="q-options">
+<button class="q-opt" onclick="checkQ(2,'a','d')">① 사해사본 1번 동굴에서 나온 두루마리다</button>
+<button class="q-opt" onclick="checkQ(2,'b','d')">② 신약 전체가 담긴 가장 오래된 사본이다</button>
+<button class="q-opt" onclick="checkQ(2,'c','d')">③ 70인역의 가장 오래된 사본이다</button>
+<button class="q-opt" onclick="checkQ(2,'d','d')">④ 현존 최고(最古)의 히브리어 성경 전권 사본이며 BHS·BHQ의 저본이다</button>
+</div><div class="q-feedback" style="display:none;"></div></div>
+
+<div class="quiz-card"><div class="q-num">문제 3</div><div class="q-text">사해사본에 대한 서술로 가장 균형 잡힌 것은?</div>
+<div class="q-options">
+<button class="q-opt" onclick="checkQ(3,'a','a')">① 1QIsa<sup>a</sup>는 1,000년 이상 뒤의 마소라 본문과 높은 일치를 보여주지만, 쿰란에는 여러 본문 전통이 공존했다</button>
+<button class="q-opt" onclick="checkQ(3,'b','a')">② 사해사본은 모든 책에서 마소라 본문과 한 글자도 다르지 않다</button>
+<button class="q-opt" onclick="checkQ(3,'c','a')">③ 사해사본은 구약 본문이 완전히 다르게 바뀌었음을 증명했다</button>
+<button class="q-opt" onclick="checkQ(3,'d','a')">④ 사해사본에는 성경 사본이 하나도 없다</button>
+</div><div class="q-feedback" style="display:none;"></div></div>
+
+<div class="quiz-card"><div class="q-num">문제 4</div><div class="q-text">P52에 대한 서술로 가장 정확한 것은?</div>
+<div class="q-options">
+<button class="q-opt" onclick="checkQ(4,'a','c')">① 요한복음 전체가 담긴 1세기 코덱스다</button>
+<button class="q-opt" onclick="checkQ(4,'b','c')">② 탄소 연대측정으로 정확히 125년으로 확정되었다</button>
+<button class="q-opt" onclick="checkQ(4,'c','c')">③ 전통적으로 125년경으로 추정된 요한복음 조각이지만, 필적 연대의 정밀성에 대한 비판이 있다</button>
+<button class="q-opt" onclick="checkQ(4,'d','c')">④ 도마복음의 그리스어 단편이다</button>
+</div><div class="q-feedback" style="display:none;"></div></div>
+
+<div class="quiz-card"><div class="q-num">문제 5</div><div class="q-text">신약 이문이 "약 50만 개"라는 추정치를 올바르게 해석한 것은?</div>
+<div class="q-options">
+<button class="q-opt" onclick="checkQ(5,'a','d')">① 신약의 절반 이상이 원문과 다르다는 뜻이다</button>
+<button class="q-opt" onclick="checkQ(5,'b','d')">② 필경사들이 다른 고대 문헌보다 유난히 부주의했다는 뜻이다</button>
+<button class="q-opt" onclick="checkQ(5,'c','d')">③ 50만 곳 모두가 교리에 영향을 준다는 뜻이다</button>
+<button class="q-opt" onclick="checkQ(5,'d','d')">④ 사본이 많고 오래 베껴졌기 때문이며, 대다수는 철자·어순 등 의미 없는 차이다</button>
+</div><div class="q-feedback" style="display:none;"></div></div>
+
+<div class="quiz-card"><div class="q-num">문제 6</div><div class="q-text">'lectio difficilior potior'(더 어려운 독법이 우선) 원칙의 논리는?</div>
+<div class="q-options">
+<button class="q-opt" onclick="checkQ(6,'a','a')">① 필경사는 어려운 표현을 쉽게 고치는 경향이 있으므로, 어려운 독법이 원래 것일 가능성이 높다</button>
+<button class="q-opt" onclick="checkQ(6,'b','a')">② 어려운 독법일수록 신학적으로 더 깊다</button>
+<button class="q-opt" onclick="checkQ(6,'c','a')">③ 사본 수가 적은 독법이 항상 원문이다</button>
+<button class="q-opt" onclick="checkQ(6,'d','a')">④ 문법이 틀린 독법은 무조건 원문이다</button>
+</div><div class="q-feedback" style="display:none;"></div></div>
+
+<div class="quiz-card"><div class="q-num">문제 7</div><div class="q-text">콤마 요한네움(요일 5:7–8)과 에라스무스에 대한 서술로 옳은 것은?</div>
+<div class="q-options">
+<button class="q-opt" onclick="checkQ(7,'a','b')">① 가장 이른 그리스어 사본들에 모두 들어 있다</button>
+<button class="q-opt" onclick="checkQ(7,'b','b')">② 에라스무스는 1·2판에서 뺐다가 3판(1522)에 넣었고, 이 계통이 KJV의 저본이 되었다</button>
+<button class="q-opt" onclick="checkQ(7,'c','b')">③ 삼위일체 교리는 전적으로 이 구절에 의존한다</button>
+<button class="q-opt" onclick="checkQ(7,'d','b')">④ 4세기 그리스 교부들이 삼위일체 논쟁에서 가장 많이 인용한 구절이다</button>
+</div><div class="q-feedback" style="display:none;"></div></div>
+
+<div class="quiz-card"><div class="q-num">문제 8</div><div class="q-text">막 16:9–20(긴 결말)의 증거 상태로 옳은 것은?</div>
+<div class="q-options">
+<button class="q-opt" onclick="checkQ(8,'a','c')">① 모든 사본에 똑같이 들어 있어 논쟁이 없다</button>
+<button class="q-opt" onclick="checkQ(8,'b','c')">② 20세기에 처음 만들어진 단락이다</button>
+<button class="q-opt" onclick="checkQ(8,'c','c')">③ 시내산사본과 바티칸사본에 없지만, 2세기에 이미 유통되었고 후대 사본 대다수에 있다</button>
+<button class="q-opt" onclick="checkQ(8,'d','c')">④ 이 단락에는 부활 이야기만 있으므로 다른 복음서와 무관하다</button>
+</div><div class="q-feedback" style="display:none;"></div></div>
+
+<div class="quiz-card"><div class="q-num">문제 9</div><div class="q-text">'얌니아 회의' 통설에 대한 현재 학계의 평가는?</div>
+<div class="q-options">
+<button class="q-opt" onclick="checkQ(9,'a','a')">① 공식 회의가 정경을 결정했다는 증거가 없으며, 논의는 일부 책의 지위에 관한 것이었다</button>
+<button class="q-opt" onclick="checkQ(9,'b','a')">② 90년 공의회가 구약 39권을 최초로 선정했다는 것이 확정된 사실이다</button>
+<button class="q-opt" onclick="checkQ(9,'c','a')">③ 얌니아는 신약 정경을 결정한 회의였다</button>
+<button class="q-opt" onclick="checkQ(9,'d','a')">④ 얌니아 회의에서 외경이 정경으로 채택되었다</button>
+</div><div class="q-feedback" style="display:none;"></div></div>
+
+<div class="quiz-card"><div class="q-num">문제 10</div><div class="q-text">367년 아타나시우스의 제39차 부활절 서신이 갖는 의미는?</div>
+<div class="q-options">
+<button class="q-opt" onclick="checkQ(10,'a','d')">① 신약 정경을 처음으로 '발명'했다</button>
+<button class="q-opt" onclick="checkQ(10,'b','d')">② 니케아 공의회의 정경 결정을 공포했다</button>
+<button class="q-opt" onclick="checkQ(10,'c','d')">③ 외경 복음서들을 정경에 추가했다</button>
+<button class="q-opt" onclick="checkQ(10,'d','d')">④ 오늘날 신약 27권과 정확히 일치하는 최초의 목록이다</button>
+</div><div class="q-feedback" style="display:none;"></div></div>
+
+<div class="quiz-card"><div class="q-num">문제 11</div><div class="q-text">1882년 로스역 『예수셩교누가복음젼셔』의 세계 선교사적 독특성은?</div>
+<div class="q-options">
+<button class="q-opt" onclick="checkQ(11,'a','b')">① 조선 왕실이 공식 후원한 최초의 번역이었다</button>
+<button class="q-opt" onclick="checkQ(11,'b','b')">② 선교사 입국 전에 한국인이 참여해 한국 밖(만주)에서 번역한 자국어 성경이 먼저 있었다</button>
+<button class="q-opt" onclick="checkQ(11,'c','b')">③ 그리스어 원문만으로 번역한 최초의 아시아 성경이었다</button>
+<button class="q-opt" onclick="checkQ(11,'d','b')">④ 일본 요코하마에서 국한문 혼용으로 간행되었다</button>
+</div><div class="q-feedback" style="display:none;"></div></div>
+
+<div class="quiz-card"><div class="q-num">문제 12</div><div class="q-text">나이다의 '동적(기능적) 등가' 번역의 목표는?</div>
+<div class="q-options">
+<button class="q-opt" onclick="checkQ(12,'a','c')">① 원문의 어순과 품사를 한 단어씩 그대로 옮기는 것</button>
+<button class="q-opt" onclick="checkQ(12,'b','c')">② 번역자의 신학을 본문에 적극적으로 덧붙이는 것</button>
+<button class="q-opt" onclick="checkQ(12,'c','c')">③ 원문이 원래 독자에게 준 것과 같은 효과를 오늘의 독자에게 주는 것</button>
+<button class="q-opt" onclick="checkQ(12,'d','c')">④ 가능한 한 옛 문체를 보존하는 것</button>
+</div><div class="q-feedback" style="display:none;"></div></div>
+
+</div>
+
+<div id="score-section" class="score-box">
+<div class="score-num" id="score-num">0</div>
+<div>12문제 중 정답 개수</div>
+</div>
+</section>
+
+</main>
+
+<footer>
+  <p>Made by Isaac with Claude | 성경은 어떻게 우리 손에 교육자료 — 대학생 버전</p>
+  <p style="margin-top:6px;"><a href="index.html">← 버전 선택으로</a></p>
+</footer>
+
+<script>
+function setActive(el) {
+  document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+  el.classList.add('active');
+}
+
+function switchTab(section, panelId, btn) {
+  const sec = document.getElementById(section);
+  sec.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  sec.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(panelId).classList.add('active');
+  btn.classList.add('active');
+}
+
+function flipCard(el) { el.classList.toggle('flipped'); }
+const toggleFlip = flipCard;
+
+function toggleAcc(btn) {
+  const body = btn.nextElementSibling;
+  const arrow = btn.querySelector('.acc-arrow');
+  const isOpen = body.classList.contains('open');
+  if (isOpen) {
+    body.style.maxHeight = body.scrollHeight + 'px';
+    requestAnimationFrame(() => {
+      body.classList.remove('open');
+      body.style.maxHeight = '0';
+    });
+  } else {
+    body.classList.add('open');
+    const _t = body.style.transition;
+    body.style.transition = 'none';
+    body.style.maxHeight = 'none';
+    const target = body.scrollHeight;
+    body.style.maxHeight = '0';
+    void body.offsetHeight;
+    body.style.transition = _t;
+    body.style.maxHeight = target + 'px';
+    body.addEventListener('transitionend', function te(e) {
+      if (e.propertyName !== 'max-height') return;
+      if (body.classList.contains('open')) body.style.maxHeight = 'none';
+      body.removeEventListener('transitionend', te);
+    });
+  }
+  if (arrow) arrow.textContent = isOpen ? '▼' : '▲';
+}
+
+const answered = {};
+let score = 0;
+const TOTAL_Q = 12;
+
+function checkQ(qNum, chosen, correctAns) {
+  if (answered[qNum]) return;
+  answered[qNum] = chosen;
+  if (chosen === correctAns) score++;
+  const letters = ['a','b','c','d'];
+  const card = document.querySelectorAll('#quiz-section .quiz-card')[qNum - 1];
+  const opts = card.querySelectorAll('.q-opt');
+  opts.forEach((opt, i) => {
+    opt.disabled = true;
+    if (letters[i] === correctAns) opt.classList.add('correct');
+    else if (letters[i] === chosen) opt.classList.add('wrong');
+  });
+  const fb = card.querySelector('.q-feedback');
+  fb.textContent = feedbacks[qNum][chosen] || '';
+  fb.style.display = 'block';
+  if (Object.keys(answered).length === TOTAL_Q) {
+    document.getElementById('score-num').textContent = score;
+    document.getElementById('score-section').style.display = 'block';
+  }
+}
+
+const feedbacks = {
+  1: {a:'반대입니다. 마소라 학자들은 자음 본문을 고치지 않았습니다.', b:'정답입니다. 쓰인 것(케티브)은 그대로 두고 읽을 것(케레)을 여백에 지시했습니다 — 전승된 본문에 대한 극도의 존중입니다.', c:'마소라 학자들은 70인역에 맞추어 본문을 고치지 않았습니다.', d:'오히려 모음 부호를 새로 고안해 붙인 사람들이 마소라 학자들입니다.'},
+  2: {a:'사해사본은 기원전 3세기–기원후 1세기의 두루마리들입니다.', b:'신약 전체가 담긴 가장 오래된 사본은 4세기의 시내산사본입니다.', c:'레닌그라드 사본은 히브리어 사본입니다.', d:'정답입니다. 현존 최고의 히브리어 성경 전권 사본으로, 현대 학술판 BHS와 BHQ의 저본입니다.'},
+  3: {a:'정답입니다. 전달의 정확성과 초기 본문의 다양성을 함께 보는 것이 정직한 그림입니다.', b:'철자·어형 차이가 있고, 일부 책은 다른 본문 전통의 사본도 있습니다.', c:'오히려 대이사야 두루마리는 1,000년 이상의 전달이 매우 안정적이었음을 보여줍니다.', d:'에스더를 제외한 구약 모든 책의 조각이 발견되었습니다.'},
+  4: {a:'P52는 요한복음 18장의 몇 절만 담긴 작은 조각입니다.', b:'P52의 연대는 필적 비교로 추정한 것이며, 그 정밀성에 대한 비판이 있습니다.', c:'정답입니다. 전통적 연대는 125년경이지만, 필적 연대는 그만큼 좁힐 수 없다는 비판(농브리 등)이 있습니다.', d:'도마복음의 그리스어 단편은 옥시링쿠스 파피루스입니다.'},
+  5: {a:'이문 수는 본문의 비율이 아니라 사본들 사이 차이의 총합입니다.', b:'거리가 강조하듯, 숫자가 큰 이유는 부주의가 아니라 필사 횟수입니다.', c:'의미 있고 원문 가능성도 있는 이문은 소수입니다.', d:'정답입니다. 많이, 오래 베껴졌기 때문에 이문도 많고, 그 대다수는 번역에도 영향이 없는 차이입니다.'},
+  6: {a:'정답입니다. 필경사는 어려운 표현을 쉽게 다듬는 경향이 있으므로, 다른 독법의 발생을 설명하는 어려운 독법이 원래 것일 가능성이 높습니다.', b:'신학적 깊이가 아니라 필사 과정의 개연성에 관한 원칙입니다.', c:'사본 수가 아니라 독법의 성격에 관한 내적 증거 원칙입니다.', d:'명백한 실수까지 원문으로 보자는 원칙은 아닙니다.'},
+  7: {a:'이른 그리스어 사본들에는 없고, 극소수의 매우 늦은 사본에만 있습니다.', b:'정답입니다. 3판(1522)에 들어간 이 구절이 공인 본문(TR) 계통을 거쳐 KJV에 실렸습니다.', c:'삼위일체 교리는 마 28:19 등 다른 본문들에 근거합니다.', d:'4세기 그리스 교부들이 인용하지 않았다는 점이 오히려 후대 첨가의 강력한 증거입니다.'},
+  8: {a:'사본마다 결말이 다르고 학계의 논쟁도 활발합니다.', b:'이레네우스의 인용으로 보아 2세기에 이미 유통되었습니다.', c:'정답입니다. 가장 이른 두 대문자 사본에는 없지만, 오래되었고 널리 전해진 단락입니다.', d:'부활 현현, 선교 명령, 표적 등 다른 복음서·사도행전과 겹치는 내용이 많습니다.'},
+  9: {a:'정답입니다. 루이스(1964) 이후 학계는 정경을 결정한 공식 회의가 있었다는 증거가 없다고 봅니다.', b:'바로 이것이 교정된 통설입니다.', c:'얌니아 논의는 히브리어 성경에 관한 것이었습니다.', d:'외경의 정경 선언은 가톨릭의 트리엔트 공의회(1546)입니다.'},
+  10: {a:'이미 교회에서 쓰이던 책들을 목록으로 적은 것이지, 새로 만든 것이 아닙니다.', b:'니케아 공의회는 정경 목록을 다루지 않았습니다.', c:'아타나시우스는 오히려 외경 복음서들을 경계했습니다.', d:'정답입니다. 현 27권과 정확히 일치하는 최초의 목록이며, 393·397년 지역 회의가 이를 확인했습니다.'},
+  11: {a:'조선은 당시 기독교를 허용하지 않았습니다.', b:'정답입니다. 개신교 선교사 입국(1884–85)보다 앞서, 의주 출신 한국인들이 참여한 번역이 만주 심양에서 간행되었습니다.', c:'로스역은 한문 신약을 바탕으로 번역하고 그리스어·영어 개역본으로 검토했습니다.', d:'그것은 1885년 이수정역 마가복음에 대한 설명입니다.'},
+  12: {a:'그것은 형식적 등가(직역)의 방향입니다.', b:'동적 등가도 원문의 의미에 충실하려는 것이지, 번역자의 신학을 더하는 것이 목표가 아닙니다.', c:'정답입니다. 원래 독자가 받은 의미와 효과를 오늘의 독자에게 재현하는 것이 목표입니다.', d:'옛 문체 보존은 동적 등가의 목표가 아닙니다.'}
+};
+
+// 스크롤스파이 — 스크롤 시 현재 섹션에 맞춰 nav 언더바를 이동시킨다(클릭 setActive와 공존, 2026-07-19 표준화)
+(function () {
+  const navLinks = document.querySelectorAll('nav a');
+  const map = {};
+  navLinks.forEach(function (a) {
+    const h = a.getAttribute('href');
+    if (h && h.charAt(0) === '#') map[h.slice(1)] = a;
+  });
+  if (!('IntersectionObserver' in window)) return;
+  const obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting && map[e.target.id]) {
+        navLinks.forEach(function (a) { a.classList.remove('active'); });
+        map[e.target.id].classList.add('active');
+      }
+    });
+  }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+  document.querySelectorAll('section[id]').forEach(function (sec) { obs.observe(sec); });
+})();
+</script>
+</body>
+</html>
