@@ -38,7 +38,7 @@
     --bg: #f9fafb;
     --card: #ffffff;
     --text: #1a1a2e;
-    --muted: #6c757d;
+    --muted: #5c636a;
     --border: #dee2e6;
     --radius: 12px;
     --shadow: 0 2px 12px rgba(0,0,0,0.08);
@@ -189,11 +189,17 @@
     .num-cards { grid-template-columns: 1fr 1fr; }
     .timeline { padding-left: 20px; } .t-item::before { left: -26px; }
   }
+  /* 상단 바: 알약 버튼은 한 줄로 유지하고, 경로 문구는 좁은 화면에서 숨긴다 */
+  .top-bar a { white-space: nowrap; flex-shrink: 0; }
+  .top-bar > span:last-child { min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  @media (max-width: 480px) { .top-bar > span:nth-last-child(-n+2) { display: none; } }
+  /* nav로 이동했을 때 섹션 제목이 고정 nav 밑에 가리지 않게 */
+  section[id] { scroll-margin-top: 60px; }
 </style>
 </head>
 <body>
 
-<div style="background:#1a2e38;padding:10px 20px;display:flex;align-items:center;gap:10px;">
+<div class="top-bar" style="background:#1a2e38;padding:10px 20px;display:flex;align-items:center;gap:10px;">
   <a href="https://faithreason.kr/Faith_Reason/" style="color:#fff;text-decoration:none;font-size:.83rem;font-weight:600;display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.2);border-radius:16px;padding:4px 12px;">← 전체 시리즈</a>
   <span style="color:rgba(255,255,255,.35);font-size:.8rem;">|</span>
   <a href="index.html" style="color:#fff;text-decoration:none;font-size:.83rem;font-weight:600;
@@ -226,7 +232,7 @@
 
 <!-- S0 -->
 <section id="s0" class="section">
-<div class="section-title">📜 원본이 없다고요?</div>
+<h2 class="section-title">📜 원본이 없다고요?</h2>
 <p class="section-sub">충격적인 사실 하나로 시작해 볼게요.</p>
 
 <div class="card">
@@ -263,7 +269,7 @@
 
 <!-- S1 -->
 <section id="s1" class="section">
-<div class="section-title">🏺 염소를 쫓다가 — 사해사본</div>
+<h2 class="section-title">🏺 염소를 쫓다가 — 사해사본</h2>
 <p class="section-sub">20세기 가장 위대한 고고학 발견은 우연한 사건에서 시작됐어요.</p>
 
 <div class="card">
@@ -297,7 +303,7 @@
 
 <!-- S2 -->
 <section id="s2" class="section">
-<div class="section-title">🏔️ 수도원의 보물 — 티셴도르프</div>
+<h2 class="section-title">🏔️ 수도원의 보물 — 티셴도르프</h2>
 <p class="section-sub">사본을 찾아 사막을 건넌 한 독일 학자의 이야기예요.</p>
 
 <div class="card">
@@ -323,7 +329,7 @@
 
 <!-- S3 -->
 <section id="s3" class="section">
-<div class="section-title">🔍 복사 실수 찾기 게임</div>
+<h2 class="section-title">🔍 복사 실수 찾기 게임</h2>
 <p class="section-sub">인쇄기가 없던 시절, 모든 책은 손으로 베껴 썼어요. 졸린 필경사는 어떤 실수를 했을까요? 카드를 눌러 뒤집어 보세요.</p>
 
 <div class="flip-grid">
@@ -379,7 +385,7 @@
 
 <!-- S4 -->
 <section id="s4" class="section">
-<div class="section-title">📖 어떤 책이 성경이 됐을까</div>
+<h2 class="section-title">📖 어떤 책이 성경이 됐을까</h2>
 <p class="section-sub">성경 66권은 누가, 어떻게 정했을까요? 이것을 '정경(正經)' 이야기라고 해요.</p>
 
 <p>'정경'으로 번역되는 그리스어 <strong>카논(κανών)</strong>은 원래 '곧은 막대기, 자'라는 뜻이에요. 신앙과 삶을 재는 '기준이 되는 책들'이라는 의미죠.</p>
@@ -412,7 +418,7 @@
 
 <!-- S5 -->
 <section id="s5" class="section">
-<div class="section-title">🌍 목숨을 건 번역</div>
+<h2 class="section-title">🌍 목숨을 건 번역</h2>
 <p class="section-sub">"모든 사람이 자기 말로 성경을 읽어야 한다" — 이 믿음 때문에 목숨을 건 사람들이 있었어요.</p>
 
 <div class="tab-bar">
@@ -447,7 +453,7 @@
 
 <!-- S6 -->
 <section id="s6" class="section">
-<div class="section-title">🇰🇷 우리말 성경이 온 길</div>
+<h2 class="section-title">🇰🇷 우리말 성경이 온 길</h2>
 <p class="section-sub">한국 교회에는 세계에서도 보기 드문 특별한 이야기가 있어요.</p>
 
 <div class="card">
@@ -477,7 +483,7 @@
 
 <!-- S7 -->
 <section id="s7" class="section">
-<div class="section-title">💎 오늘 내 손의 성경</div>
+<h2 class="section-title">💎 오늘 내 손의 성경</h2>
 <p class="section-sub">지금까지의 여정을 하나로 모아 볼게요.</p>
 
 <div class="compare-grid">
@@ -510,7 +516,7 @@
 
 <!-- S8 -->
 <section id="s8" class="section">
-<div class="section-title">🌟 성경을 우리 손에 전해준 사람들</div>
+<h2 class="section-title">🌟 성경을 우리 손에 전해준 사람들</h2>
 <p class="section-sub">찾고, 옮기고, 연구한 네 사람입니다.</p>
 
 <div class="person-grid">
@@ -547,7 +553,7 @@
 
 <!-- QUIZ -->
 <section id="squiz" class="section">
-<div class="section-title">❓ 얼마나 이해했나요?</div>
+<h2 class="section-title">❓ 얼마나 이해했나요?</h2>
 <p class="section-sub">10문제로 확인해봐요.</p>
 
 <div id="quiz-section">
@@ -747,12 +753,21 @@ const feedbacks = {
     const h = a.getAttribute('href');
     if (h && h.charAt(0) === '#') map[h.slice(1)] = a;
   });
+  // 현재 섹션의 링크가 nav 화면 밖에 있으면 nav만 가로로 움직여 보이게 한다(페이지 세로 스크롤은 건드리지 않음)
+  function showInNav(a) {
+    let box = a.parentElement;
+    while (box && box !== document.body && !(/(auto|scroll)/.test(getComputedStyle(box).overflowX) && box.scrollWidth > box.clientWidth + 1)) box = box.parentElement;
+    if (!box || box === document.body) return;
+    const r = a.getBoundingClientRect(), b = box.getBoundingClientRect();
+    if (r.left < b.left + 8 || r.right > b.right - 8) box.scrollLeft += (r.left - b.left) - (b.width - r.width) / 2;
+  }
   if (!('IntersectionObserver' in window)) return;
   const obs = new IntersectionObserver(function (entries) {
     entries.forEach(function (e) {
       if (e.isIntersecting && map[e.target.id]) {
         navLinks.forEach(function (a) { a.classList.remove('active'); });
         map[e.target.id].classList.add('active');
+        showInNav(map[e.target.id]);
       }
     });
   }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });

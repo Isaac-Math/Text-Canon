@@ -37,7 +37,7 @@
     --bg: #f9fafb;
     --card: #ffffff;
     --text: #1a1a2e;
-    --muted: #6c757d;
+    --muted: #5c636a;
     --radius: 16px;
     --shadow: 0 4px 24px rgba(0,0,0,0.10);
   }
@@ -132,10 +132,13 @@
     text-align: center; padding: 20px; font-size: .82rem;
   }
   footer a { color: rgba(255,255,255,.9); }
+  /* 상단 바: 알약 버튼은 한 줄로 유지하고, 시리즈 이름은 좁은 화면에서 말줄임 */
+  .top-bar a { white-space: nowrap; flex-shrink: 0; }
+  .top-bar > span:last-child { min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 </style>
 </head>
 <body>
-<div style="background:#1a2e38;padding:10px 20px;display:flex;align-items:center;gap:10px;">
+<div class="top-bar" style="background:#1a2e38;padding:10px 20px;display:flex;align-items:center;gap:10px;">
   <a href="https://faithreason.kr/Faith_Reason/" style="color:#fff;text-decoration:none;font-size:.83rem;font-weight:600;display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:16px;padding:4px 12px;">← 신앙과 이성 전체</a>
   <span style="color:rgba(255,255,255,.35);font-size:.8rem;">|</span>
   <span style="color:rgba(255,255,255,.7);font-size:.82rem;">성경은 어떻게 우리 손에</span>
